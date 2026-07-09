@@ -1,0 +1,143 @@
+column_name,description
+STATE_CODE_001,State Code
+STRUCTURE_NUMBER_008,Structure Number
+RECORD_TYPE_005A,Record Type
+ROUTE_PREFIX_005B,Route Signing Prefix
+SERVICE_LEVEL_005C,Designated Level of Service
+ROUTE_NUMBER_005D,Route Number
+DIRECTION_005E,Directional Suffix
+HIGHWAY_DISTRICT_002,Highway Agency District
+COUNTY_CODE_003,County Code
+PLACE_CODE_004,Place Code
+FEATURES_DESC_006A,Features Intersected
+CRITICAL_FACILITY_006B,Critical Facility Indicator
+FACILITY_CARRIED_007,Facility Carried by Structure
+LOCATION_009,Location
+MIN_VERT_CLR_010,Inventory Route Min Vertical Clearance
+KILOPOINT_011,Kilometerpoint
+BASE_HWY_NETWORK_012,Base Highway Network
+LRS_INV_ROUTE_013A,LRS Inventory Route
+SUBROUTE_NO_013B,Subroute Number
+LAT_016,Latitude
+LONG_017,Longitude
+DETOUR_KILOS_019,Bypass/Detour Length
+TOLL_020,Toll
+MAINTENANCE_021,Maintenance Responsibility
+OWNER_022,Owner
+FUNCTIONAL_CLASS_026,Functional Classification
+YEAR_BUILT_027,Year Built
+TRAFFIC_LANES_ON_028A,Lanes On Structure
+TRAFFIC_LANES_UND_028B,Lanes Under Structure
+ADT_029,Average Daily Traffic
+YEAR_ADT_030,Year of ADT
+DESIGN_LOAD_031,Design Load
+APPR_WIDTH_MT_032,Approach Roadway Width (m)
+MEDIAN_CODE_033,Bridge Median
+DEGREES_SKEW_034,Skew
+STRUCTURE_FLARED_035,Structure Flared
+RAILINGS_036A,Bridge Railings
+TRANSITIONS_036B,Transitions
+APPR_RAIL_036C,Approach Guardrail
+APPR_RAIL_END_036D,Approach Guardrail Ends
+HISTORY_037,Historical Significance
+NAVIGATION_038,Navigation Control
+NAV_VERT_CLR_MT_039,Navigation Vertical Clearance (m)
+NAV_HORR_CLR_MT_040,Navigation Horizontal Clearance (m)
+OPEN_CLOSED_POSTED_041,Structure Open/Posted/Closed
+SERVICE_ON_042A,Type of Service On Bridge
+SERVICE_UND_042B,Type of Service Under Bridge
+STRUCTURE_KIND_043A,"Structure Kind, Main"
+STRUCTURE_TYPE_043B,"Structure Type, Main"
+APPR_KIND_044A,"Structure Kind, Approach"
+APPR_TYPE_044B,"Structure Type, Approach"
+MAIN_UNIT_SPANS_045,Number of Spans in Main Unit
+APPR_SPANS_046,Number of Approach Spans
+HORR_CLR_MT_047,Inventory Route Total Horizontal Clearance (m)
+MAX_SPAN_LEN_MT_048,Length of Maximum Span (m)
+STRUCTURE_LEN_MT_049,Structure Length (m)
+LEFT_CURB_MT_050A,Left Curb/Sidewalk Width (m)
+RIGHT_CURB_MT_050B,Right Curb/Sidewalk Width (m)
+ROADWAY_WIDTH_MT_051,Bridge Roadway Width Curb-to-Curb (m)
+DECK_WIDTH_MT_052,Deck Width Out-to-Out (m)
+VERT_CLR_OVER_MT_053,Min Vertical Clearance Over Bridge Roadway (m)
+VERT_CLR_UND_REF_054A,Min Vertical Underclearance Reference Feature
+VERT_CLR_UND_054B,Min Vertical Underclearance (m)
+LAT_UND_REF_055A,Min Lateral Underclearance Reference Feature
+LAT_UND_MT_055B,Min Lateral Underclearance Right (m)
+LEFT_LAT_UND_MT_056,Min Lateral Underclearance Left (m)
+DECK_COND_058,Deck Condition Rating
+SUPERSTRUCTURE_COND_059,Superstructure Condition Rating
+SUBSTRUCTURE_COND_060,Substructure Condition Rating
+CHANNEL_COND_061,Channel and Channel Protection
+CULVERT_COND_062,Culvert Condition Rating
+OPR_RATING_METH_063,Method Used to Determine Operating Rating
+OPERATING_RATING_064,Operating Rating
+INV_RATING_METH_065,Method Used to Determine Inventory Rating
+INVENTORY_RATING_066,Inventory Rating
+STRUCTURAL_EVAL_067,Structural Evaluation Appraisal
+DECK_GEOMETRY_EVAL_068,Deck Geometry Appraisal
+UNDCLRENCE_EVAL_069,Underclearances Appraisal
+POSTING_EVAL_070,Bridge Posting
+WATERWAY_EVAL_071,Waterway Adequacy Appraisal
+APPR_ROAD_EVAL_072,Approach Roadway Alignment Appraisal
+WORK_PROPOSED_075A,Type of Work Proposed
+WORK_DONE_BY_075B,Work Done By
+IMP_LEN_MT_076,Length of Structure Improvement (m)
+DATE_OF_INSPECT_090,Inspection Date
+INSPECT_FREQ_MONTHS_091,Designated Inspection Frequency (months)
+FRACTURE_092A,Fracture Critical Details Inspection
+UNDWATER_LOOK_SEE_092B,Underwater Inspection
+SPEC_INSPECT_092C,Other Special Inspection
+FRACTURE_LAST_DATE_093A,Fracture Critical Last Inspection Date
+UNDWATER_LAST_DATE_093B,Underwater Last Inspection Date
+SPEC_LAST_DATE_093C,Special Inspection Last Date
+BRIDGE_IMP_COST_094,Bridge Improvement Cost ($1000s)
+ROADWAY_IMP_COST_095,Roadway Improvement Cost ($1000s)
+TOTAL_IMP_COST_096,Total Project Cost ($1000s)
+YEAR_OF_IMP_097,Year of Improvement Cost Estimate
+OTHER_STATE_CODE_098A,Border Bridge - Neighboring State Code
+OTHER_STATE_PCNT_098B,Border Bridge - Percent Responsibility
+OTHR_STATE_STRUC_NO_099,Border Bridge Structure Number
+STRAHNET_HIGHWAY_100,STRAHNET Highway Designation
+PARALLEL_STRUCTURE_101,Parallel Structure Designation
+TRAFFIC_DIRECTION_102,Direction of Traffic
+TEMP_STRUCTURE_103,Temporary Structure Designation
+HIGHWAY_SYSTEM_104,Highway System of Inventory Route
+FEDERAL_LANDS_105,Federal Lands Highway
+YEAR_RECONSTRUCTED_106,Year Reconstructed
+DECK_STRUCTURE_TYPE_107,Deck Structure Type
+SURFACE_TYPE_108A,Type of Wearing Surface
+MEMBRANE_TYPE_108B,Type of Membrane
+DECK_PROTECTION_108C,Deck Protection
+PERCENT_ADT_TRUCK_109,Average Daily Truck Traffic (%)
+NATIONAL_NETWORK_110,Designated National Network
+PIER_PROTECTION_111,Pier or Abutment Protection
+BRIDGE_LEN_IND_112,NBIS Bridge Length Indicator
+SCOUR_CRITICAL_113,Scour Critical Bridges
+FUTURE_ADT_114,Future Average Daily Traffic
+YEAR_OF_FUTURE_ADT_115,Year of Future ADT
+MIN_NAV_CLR_MT_116,Minimum Navigation Vertical Clearance (m)
+FED_AGENCY,Federal Agency
+DATE_LAST_UPDATE,
+TYPE_LAST_UPDATE,
+DEDUCT_CODE,
+REMARKS,
+PROGRAM_CODE,
+PROJ_NO,
+PROJ_SUFFIX,
+NBI_TYPE_OF_IMP,
+DTL_TYPE_OF_IMP,
+SPECIAL_CODE,
+STEP_CODE,
+STATUS_WITH_10YR_RULE,
+SUFFICIENCY_ASTERC,
+SUFFICIENCY_RATING,
+STATUS_NO_10YR_RULE,
+SURVEY_YEAR,
+CAT10,
+CAT23,
+CAT29,
+SUBMITTED_BY,Submitted By
+BRIDGE_CONDITION,Overall Bridge Condition
+LOWEST_RATING,Lowest Condition Rating
+DECK_AREA,Deck Area

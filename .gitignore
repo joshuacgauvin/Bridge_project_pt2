@@ -1,0 +1,90 @@
+# ============================================================
+#  Bridge survival project — .gitignore
+#  Keep source (notebooks, this file); exclude data, caches,
+#  downloads, model artifacts, and environment/editor junk.
+#  The large CSVs are either regenerable from the notebooks or
+#  are input datasets documented elsewhere — not git material.
+# ============================================================
+
+# ---- Data files: raw NBI, generated panels, MA reference sets, results ----
+*.csv
+# ...but keep the small NBI column-label reference (schema lookup, ~6 KB,
+# needed to interpret the data columns). Delete this line to exclude it too.
+!nbi_column_labels.csv
+*.parquet
+*.feather
+*.pqt
+
+# ---- Generated / cached data directories ----
+Bridges_all_of_US/raw/
+Bridges_all_of_US/climate_cache/
+Bridges_all_of_US/geo_cache/
+cache/
+
+# ---- Downloaded geospatial artifacts (Natural Earth coastline, etc.) ----
+*.zip
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.gpkg
+
+# ---- Trained model artifacts ----
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+
+# ---- Logs ----
+*.log
+*_log.txt
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+# NOTE: notebook cell OUTPUTS are stored inside the .ipynb itself and can't be
+# gitignored. If you don't want large outputs committed, run `nbstripout` or
+# clear outputs before committing.
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipython/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ---- Secrets / local environment ----
+.env
+.env.*
+*.local
+
+# ---- Editor / tooling ----
+.vscode/
+.idea/
+.claude/settings.local.json
+
+# ---- OS / OneDrive junk ----
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---- Scratch / temp ----
+*.tmp
+*.tmp.csv
+*.bak
+*~
+*.swp
