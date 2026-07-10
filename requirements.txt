@@ -1,0 +1,10 @@
+pandas
+numpy
+scipy
+requests
+scikit-learn
+scikit-survival
+joblib
+plotly
+geopandas
+pydaymet
