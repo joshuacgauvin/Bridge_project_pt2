@@ -1,10 +1,31 @@
-pandas
-numpy
+# Verified working set (2026-07): pandas 3.0.3, numpy 2.5.1, scikit-learn 1.9.0,
+# scikit-survival 0.28.0, lifelines 0.30.3.
+#
+# KNOWN CONFLICT: lifelines 0.30.x declares `pandas<3.0` in its metadata but runs
+# correctly on pandas 3.x (every model in this project was fit that way). Installing
+# lifelines normally would downgrade pandas below 3.0 and break the data pipeline.
+# Fresh environment setup is therefore two steps:
+#
+#   pip install -r requirements.txt
+#   pip install --no-deps "lifelines>=0.30"
+#
+# lifelines' other dependencies (autograd, autograd-gamma, formulaic, matplotlib,
+# numpy, pandas, scipy) are all listed below so --no-deps leaves nothing missing.
+
+pandas>=3.0
+numpy>=2.0
 scipy
 requests
-scikit-learn
-scikit-survival
+scikit-learn>=1.9
+scikit-survival>=0.25
 joblib
 plotly
+nbformat>=4.2.0   # required for plotly figures to render inside notebooks (bridge_map_national.ipynb)
 geopandas
 pydaymet
+
+# lifelines runtime deps (see note above)
+autograd
+autograd-gamma
+formulaic
+matplotlib

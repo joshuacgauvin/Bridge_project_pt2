@@ -1,0 +1,38 @@
+{
+  "generated_utc": "2026-07-12T00:09:45Z",
+  "smoke_test": false,
+  "n_bridges": 1206337,
+  "n_train": 965069,
+  "n_test": 241268,
+  "n_features": 267,
+  "penalizer": 0.01,
+  "imputation": "train-median + deduplicated 0/1 missingness flags",
+  "cox_ph": {
+    "c_index_test": 0.9052,
+    "integrated_brier_score": 0.0483,
+    "auc_by_horizon": {
+      "25yr": 0.961,
+      "50yr": 0.9459,
+      "75yr": 0.9675
+    },
+    "auc_mean": 0.9595,
+    "fit_seconds": 46.0
+  },
+  "weibull_aft": {
+    "c_index_test": 0.907,
+    "integrated_brier_score": 0.0475,
+    "auc_by_horizon": {
+      "25yr": 0.9629,
+      "50yr": 0.9478,
+      "75yr": 0.9667
+    },
+    "auc_mean": 0.9599,
+    "fit_seconds": 342.9
+  },
+  "rsf_reference": {
+    "c_index_test": 0.804,
+    "integrated_brier_score": 0.0645,
+    "auc_mean": 0.9463,
+    "source": "us_rsf_metrics.json"
+  }
+}

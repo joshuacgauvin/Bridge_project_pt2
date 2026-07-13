@@ -1,0 +1,43 @@
+{
+  "generated_utc": "2026-07-13T00:49:08Z",
+  "design": {
+    "ablation_train_rows": 299998,
+    "shared_test_rows": 241268,
+    "ablation_params": {
+      "n_estimators": 100,
+      "max_samples": 0.2,
+      "min_samples_split": 100,
+      "min_samples_leaf": 50,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "ma_params": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "n_state_dummies": 51
+  },
+  "arm_A_with_state": {
+    "pooled_c_index": 0.8023,
+    "median_state_c_index": 0.7832,
+    "ma_c_index": 0.6926
+  },
+  "arm_B_without_state": {
+    "pooled_c_index": 0.8019,
+    "median_state_c_index": 0.7909,
+    "ma_c_index": 0.6877
+  },
+  "delta_summary": {
+    "median_state_delta_B_minus_A": 0.0017,
+    "states_better_under_B": 31,
+    "n_states_compared": 50
+  },
+  "arm_C_ma_specialist_c_index": 0.8323
+}

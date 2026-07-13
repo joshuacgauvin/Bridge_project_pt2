@@ -1,0 +1,117 @@
+{
+  "generated_utc": "2026-07-11T16:52:14Z",
+  "design": {
+    "state_fips": "42",
+    "state_owned_only": true,
+    "spells": 6836,
+    "spell_event_rate": 0.273,
+    "rsf_params": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "aft_penalizer": 0.01,
+    "test_size": 0.2,
+    "seed": 42,
+    "truck_clock_units": "trucks / 1e+06",
+    "limitations": [
+      "rebar type not in NBI",
+      "one spell per bridge, covariates at spell start",
+      "left-censored spells excluded",
+      "truck clock = ADTT at spell start x years"
+    ]
+  },
+  "published_lu_guler_2022": {
+    "RSF, traffic clock": 0.8362,
+    "RSF, calendar clock": 0.5913,
+    "AFT-Weibull, traffic clock": 0.6931
+  },
+  "results": {
+    "spells_years": {
+      "n": 6836,
+      "n_test": 1368,
+      "event_rate": 0.273,
+      "rsf_baseline": 0.6664,
+      "rsf_climate": 0.6758,
+      "rsf_climate_delta": 0.0094,
+      "aft_baseline": 0.6228,
+      "aft_climate": 0.6431,
+      "aft_climate_delta": 0.0203
+    },
+    "spells_traffic": {
+      "n": 6595,
+      "n_test": 1319,
+      "event_rate": 0.272,
+      "rsf_baseline": 0.8756,
+      "rsf_climate": 0.8721,
+      "rsf_climate_delta": -0.0035,
+      "aft_baseline": 0.8324,
+      "aft_climate": 0.8379,
+      "aft_climate_delta": 0.0055
+    },
+    "deck_first_poor_age": {
+      "n": 40916,
+      "n_test": 8184,
+      "event_rate": 0.176,
+      "rsf_baseline": 0.8132,
+      "rsf_climate": 0.9072,
+      "rsf_climate_delta": 0.094,
+      "aft_baseline": 0.8403,
+      "aft_climate": 0.939,
+      "aft_climate_delta": 0.0987
+    },
+    "composite_first_poor_age": {
+      "n": 40887,
+      "n_test": 8178,
+      "event_rate": 0.322,
+      "rsf_baseline": 0.7153,
+      "rsf_climate": 0.8414,
+      "rsf_climate_delta": 0.1261,
+      "aft_baseline": 0.8426,
+      "aft_climate": 0.9285,
+      "aft_climate_delta": 0.0859
+    }
+  },
+  "robustness_climate_normals": {
+    "rationale": "per-year climate keyed on the kept row's SURVEY_YEAR leaks the observation era on first-hit outcomes; normals (1992-2025 cell means) carry only spatial exposure \u2014 publication numbers for first-hit outcomes should use the normals deltas",
+    "deck_first_poor_age": {
+      "rsf_climate_normals": 0.8384,
+      "normals_delta_vs_baseline": 0.0252,
+      "per_year_delta_vs_baseline": 0.094
+    },
+    "composite_first_poor_age": {
+      "rsf_climate_normals": 0.7378,
+      "normals_delta_vs_baseline": 0.0225,
+      "per_year_delta_vs_baseline": 0.1261
+    }
+  },
+  "significance_paired_bootstrap": {
+    "method": "baseline vs climate-normals RSF, both scored on the same resampled rows of the shared test split; percentile CI over B bootstrap resamples",
+    "deck_first_poor_age": {
+      "delta_point": 0.0252,
+      "delta_ci95": [
+        0.0191,
+        0.0309
+      ],
+      "p_two_sided": "< 0.002",
+      "bootstrap_B": 1000,
+      "n_test": 8184,
+      "n_test_events": 1478
+    },
+    "composite_first_poor_age": {
+      "delta_point": 0.0225,
+      "delta_ci95": [
+        0.0178,
+        0.0274
+      ],
+      "p_two_sided": "< 0.002",
+      "bootstrap_B": 1000,
+      "n_test": 8178,
+      "n_test_events": 2664
+    }
+  }
+}

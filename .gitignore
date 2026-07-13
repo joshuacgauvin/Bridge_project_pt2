@@ -1,19 +1,14 @@
-# ============================================================
-#  Bridge survival project — .gitignore
-#  Keep source (notebooks, this file); exclude data, caches,
-#  downloads, model artifacts, and environment/editor junk.
-#  The large CSVs are either regenerable from the notebooks or
-#  are input datasets documented elsewhere — not git material.
-# ============================================================
-
 # ---- Data files: raw NBI, generated panels, MA reference sets, results ----
 *.csv
-# ...but keep the small NBI column-label reference (schema lookup, ~6 KB,
-# needed to interpret the data columns). Delete this line to exclude it too.
 !nbi_column_labels.csv
+!us_cox_hazard_ratios.csv
+!us_aft_coefficients.csv
+!us_rsf_cindex_by_state.csv
+!us_rsf_feature_importance.csv
 *.parquet
 *.feather
 *.pqt
+Bridges_all_of_US/us_bridge_risk_map.json
 
 # ---- Generated / cached data directories ----
 Bridges_all_of_US/raw/
@@ -45,9 +40,6 @@ cache/
 
 # ---- Jupyter ----
 .ipynb_checkpoints/
-# NOTE: notebook cell OUTPUTS are stored inside the .ipynb itself and can't be
-# gitignored. If you don't want large outputs committed, run `nbstripout` or
-# clear outputs before committing.
 
 # ---- Python ----
 __pycache__/
