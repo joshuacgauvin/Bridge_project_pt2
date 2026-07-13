@@ -61,7 +61,7 @@ The parametric models outperform the RSF at national scale. The RSF's hyperparam
 Metrics: `us_rsf_metrics.json`, `us_parametric_metrics.json`. Hazard ratios / AFT coefficients: `us_cox_hazard_ratios.csv`, `us_aft_coefficients.csv` (regenerable from `train_national_parametric.ipynb`).
 
 ### Climate contribution (Pennsylvania case study)
-The [Lu & Guler comparison study](Lu%26Guler_comparison/pa_deck_climate_study.ipynb) isolates what the environmental features add over a feature-matched structural baseline on PA state-owned bridges:
+The [Lu & Guler comparison study](Lu%2BGuler_comparison/pa_deck_climate_study.ipynb) isolates what the environmental features add over a feature-matched structural baseline on PA state-owned bridges:
 
 - Adding climate normals (1992–2025 Daymet cell means) + coastal distance improves the deck first-hit-poor C-Index by **+0.025** (95% CI +0.019 to +0.031) and the composite outcome by **+0.023** (95% CI +0.018 to +0.027) — paired bootstrap over the shared test split, B = 1000, p < 0.002 for both.
 - Caveat established along the way: joining climate by *observation year* inflates these deltas to +0.09–0.13 on first-hit outcomes, because the climate year leaks the observation era. Climate normals carry only the spatial exposure signal and give the honest estimate above.
