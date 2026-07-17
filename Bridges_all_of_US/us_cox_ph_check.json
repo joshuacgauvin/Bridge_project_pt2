@@ -1,0 +1,60 @@
+{
+  "scope": "stratified (state x event) 99,999-row training subsample (29,265 events), identical refit \u2014 the full-train test is quadratic in events (~19 h measured extrapolation)",
+  "time_transform": "rank",
+  "n_covariates": 266,
+  "n_violating_p05": 91,
+  "n_violating_p001": 40,
+  "top10_offenders": [
+    {
+      "covariate": "YEAR_BUILT_027",
+      "test_statistic": 490.6,
+      "p": 1.0458174932713433e-108
+    },
+    {
+      "covariate": "BASE_HWY_NETWORK_012_missing",
+      "test_statistic": 114.1,
+      "p": 1.2088897327979184e-26
+    },
+    {
+      "covariate": "SURFACE_TYPE_1",
+      "test_statistic": 104.8,
+      "p": 1.3423245148097078e-24
+    },
+    {
+      "covariate": "STATE_47",
+      "test_statistic": 97.4,
+      "p": 5.797409677092837e-23
+    },
+    {
+      "covariate": "SURFACE_TYPE_7",
+      "test_statistic": 58.1,
+      "p": 2.5272586234429343e-14
+    },
+    {
+      "covariate": "DECK_TYPE_9",
+      "test_statistic": 51.3,
+      "p": 7.744465442043355e-13
+    },
+    {
+      "covariate": "BASE_HWY_NETWORK_012",
+      "test_statistic": 49.9,
+      "p": 1.6352618264405961e-12
+    },
+    {
+      "covariate": "DECK_TYPE_6",
+      "test_statistic": 47.8,
+      "p": 4.6567016718842375e-12
+    },
+    {
+      "covariate": "SCOUR_CRITICAL_113",
+      "test_statistic": 45.3,
+      "p": 1.659567179955828e-11
+    },
+    {
+      "covariate": "LAT_UND_MT_055B_missing",
+      "test_statistic": 39.4,
+      "p": 3.44748291705672e-10
+    }
+  ],
+  "interpretation": "At this n, statistically detectable PH violations are expected for most real time-varying effects; Cox is reported as a discriminative benchmark and its hazard ratios read as time-averaged effects."
+}

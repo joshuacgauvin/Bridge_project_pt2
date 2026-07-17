@@ -1,0 +1,27 @@
+{
+  "old_kept_row_ref_anchor": {
+    "event": {
+      "n_reconstructed": 42898,
+      "share_rec_ge_2010": 0.0097,
+      "median_ysr": 50.0
+    },
+    "censored": {
+      "n_reconstructed": 86977,
+      "share_rec_ge_2010": 0.1083,
+      "median_ysr": 38.0
+    }
+  },
+  "new_entry_row": {
+    "event": {
+      "n_reconstructed": 38278,
+      "share_rec_ge_2010": 0.0056,
+      "median_ysr": 21.0
+    },
+    "censored": {
+      "n_reconstructed": 69067,
+      "share_rec_ge_2010": 0.0169,
+      "median_ysr": 13.0
+    }
+  },
+  "note": "share_rec_ge_2010 must be ~equal across groups in the NEW variant; the OLD variant's gap is mechanical era leakage (kept-row truncation)."
+}

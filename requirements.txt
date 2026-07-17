@@ -21,6 +21,7 @@ scikit-survival>=0.25
 joblib
 plotly
 nbformat>=4.2.0   # required for plotly figures to render inside notebooks (bridge_map_national.ipynb)
+nbclient          # headless notebook execution (smoke passes + the overnight model chain)
 geopandas
 pydaymet
 

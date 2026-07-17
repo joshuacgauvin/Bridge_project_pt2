@@ -1,0 +1,52 @@
+{
+  "era_free_reference": {
+    "rsf_c_index": 0.7547,
+    "cox_c_index": 0.8835,
+    "aft_c_index": 0.8839,
+    "n_test": 194781,
+    "source": [
+      "us_rsf_metrics.json",
+      "us_parametric_metrics.json"
+    ],
+    "note": "shipped era-free models, NOT refit here \u2014 same matrices, same seed-42 split"
+  },
+  "generated_utc": "2026-07-15T19:06:49Z",
+  "design": {
+    "leaky_climate": "per-year climate joined on (grid_lat, grid_lon, kept-row SURVEY_YEAR)",
+    "leaky_reconstruction": "kept-row SURVEY_YEAR - kept-row YEAR_RECONSTRUCTED_106 (retired definition)",
+    "rsf_params": {
+      "n_estimators": 200,
+      "max_samples": 0.1,
+      "min_samples_split": 100,
+      "min_samples_leaf": 50,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "penalizer": 0.01,
+    "split": "seed-42 80/20, identical rows to the shipped matrices"
+  },
+  "leaky_rsf": {
+    "c_index_test": 0.7757,
+    "delta_vs_era_free": 0.021,
+    "n_test": 194781,
+    "fit_minutes": 48.7
+  },
+  "leaky_cox": {
+    "c_index_test": 0.8967,
+    "delta_vs_era_free": 0.0132,
+    "n_test": 194781
+  },
+  "leaky_aft": {
+    "c_index_test": 0.8994,
+    "delta_vs_era_free": 0.0155,
+    "n_test": 194781
+  },
+  "deltas": {
+    "rsf": 0.021,
+    "cox": 0.0132,
+    "aft": 0.0155,
+    "note": "Positive = the leaky (per-year climate + kept-row reconstruction) build inflates the test C-index; these reproducible values replace the previously asserted README numbers. Reported as computed, sign included."
+  }
+}

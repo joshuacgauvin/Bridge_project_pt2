@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-07-13T00:49:08Z",
+  "generated_utc": "2026-07-15T18:11:05Z",
   "design": {
     "ablation_train_rows": 299998,
-    "shared_test_rows": 241268,
+    "shared_test_rows": 194781,
     "ablation_params": {
       "n_estimators": 100,
       "max_samples": 0.2,
@@ -25,19 +25,80 @@
     "n_state_dummies": 51
   },
   "arm_A_with_state": {
-    "pooled_c_index": 0.8023,
-    "median_state_c_index": 0.7832,
-    "ma_c_index": 0.6926
+    "pooled_c_index": 0.7559,
+    "median_state_c_index": 0.7451,
+    "ma_c_index": 0.677
   },
   "arm_B_without_state": {
-    "pooled_c_index": 0.8019,
-    "median_state_c_index": 0.7909,
-    "ma_c_index": 0.6877
+    "pooled_c_index": 0.7527,
+    "median_state_c_index": 0.7485,
+    "ma_c_index": 0.6733
   },
   "delta_summary": {
-    "median_state_delta_B_minus_A": 0.0017,
-    "states_better_under_B": 31,
+    "median_state_delta_B_minus_A": -0.001,
+    "states_better_under_B": 21,
     "n_states_compared": 50
   },
-  "arm_C_ma_specialist_c_index": 0.8323
+  "arm_C_ma_specialist_c_index": 0.8376,
+  "arm_D_cost_matched_capacity": {
+    "question": "How much of the full RSF's C-index gap to Cox/AFT is the memory-driven coarsening (leaf=50, 10% per-tree subsampling) vs real capacity limits? MA-grade hyperparameters at Arm-C-matched cost on national subsamples.",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "n_train_per_seed": 15057,
+    "n_seeds": 5,
+    "pooled_c_mean": 0.7879,
+    "pooled_c_sd": 0.0041,
+    "median_state_c_mean": 0.7763,
+    "median_state_c_sd": 0.0043,
+    "per_seed": [
+      {
+        "seed": 0,
+        "n_train": 15056,
+        "pooled_c_index": 0.7889,
+        "median_state_c_index": 0.7717
+      },
+      {
+        "seed": 1,
+        "n_train": 15056,
+        "pooled_c_index": 0.7878,
+        "median_state_c_index": 0.781
+      },
+      {
+        "seed": 2,
+        "n_train": 15056,
+        "pooled_c_index": 0.7923,
+        "median_state_c_index": 0.777
+      },
+      {
+        "seed": 3,
+        "n_train": 15056,
+        "pooled_c_index": 0.7892,
+        "median_state_c_index": 0.7799
+      },
+      {
+        "seed": 4,
+        "n_train": 15056,
+        "pooled_c_index": 0.7811,
+        "median_state_c_index": 0.772
+      }
+    ],
+    "arm_D2_50k": {
+      "seed": 42,
+      "n_train": 50006,
+      "pooled_c_index": 0.7973,
+      "median_state_c_index": 0.7862
+    },
+    "full_rsf_reference": 0.7547,
+    "cox_reference": 0.8835,
+    "aft_reference": 0.8839,
+    "gap_to_cox_full_rsf": 0.1288,
+    "gap_to_cox_arm_D": 0.0956
+  }
 }
