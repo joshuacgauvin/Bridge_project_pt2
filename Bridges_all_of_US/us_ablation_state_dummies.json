@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-15T18:11:05Z",
+  "generated_utc": "2026-07-17T21:07:16Z",
   "design": {
     "ablation_train_rows": 299998,
     "shared_test_rows": 194781,
@@ -89,16 +89,70 @@
         "median_state_c_index": 0.772
       }
     ],
-    "arm_D2_50k": {
-      "seed": 42,
-      "n_train": 50006,
-      "pooled_c_index": 0.7973,
-      "median_state_c_index": 0.7862
-    },
+    "capacity_curve": [
+      {
+        "n_train_target": 50000,
+        "n_seeds": 1,
+        "pooled_c_mean": 0.7973,
+        "pooled_c_sd": null,
+        "median_state_c_mean": 0.7862,
+        "per_seed": [
+          {
+            "seed": 42,
+            "n_train": 50006,
+            "pooled_c_index": 0.7973,
+            "median_state_c_index": 0.7862
+          }
+        ]
+      },
+      {
+        "n_train_target": 100000,
+        "n_seeds": 3,
+        "pooled_c_mean": 0.8026,
+        "pooled_c_sd": 0.0025,
+        "median_state_c_mean": 0.7929,
+        "per_seed": [
+          {
+            "seed": 42,
+            "n_train": 99999,
+            "pooled_c_index": 0.802,
+            "median_state_c_index": 0.7939
+          },
+          {
+            "seed": 0,
+            "n_train": 99999,
+            "pooled_c_index": 0.8005,
+            "median_state_c_index": 0.7936
+          },
+          {
+            "seed": 1,
+            "n_train": 99999,
+            "pooled_c_index": 0.8053,
+            "median_state_c_index": 0.7912
+          }
+        ]
+      },
+      {
+        "n_train_target": 200000,
+        "n_seeds": 1,
+        "pooled_c_mean": 0.8062,
+        "pooled_c_sd": null,
+        "median_state_c_mean": 0.8009,
+        "per_seed": [
+          {
+            "seed": 42,
+            "n_train": 199998,
+            "pooled_c_index": 0.8062,
+            "median_state_c_index": 0.8009
+          }
+        ]
+      }
+    ],
     "full_rsf_reference": 0.7547,
     "cox_reference": 0.8835,
     "aft_reference": 0.8839,
     "gap_to_cox_full_rsf": 0.1288,
-    "gap_to_cox_arm_D": 0.0956
+    "gap_to_cox_arm_D": 0.0956,
+    "gap_to_cox_top_capacity": 0.0773
   }
 }
