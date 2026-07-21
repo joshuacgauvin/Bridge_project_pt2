@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-17T21:07:16Z",
+  "generated_utc": "2026-07-20T08:41:18Z",
   "design": {
     "ablation_train_rows": 299998,
     "shared_test_rows": 194781,
@@ -25,21 +25,21 @@
     "n_state_dummies": 51
   },
   "arm_A_with_state": {
-    "pooled_c_index": 0.7559,
-    "median_state_c_index": 0.7451,
-    "ma_c_index": 0.677
+    "pooled_c_index": 0.7542,
+    "median_state_c_index": 0.7457,
+    "ma_c_index": 0.6755
   },
   "arm_B_without_state": {
-    "pooled_c_index": 0.7527,
-    "median_state_c_index": 0.7485,
-    "ma_c_index": 0.6733
+    "pooled_c_index": 0.7532,
+    "median_state_c_index": 0.7472,
+    "ma_c_index": 0.6715
   },
   "delta_summary": {
-    "median_state_delta_B_minus_A": -0.001,
-    "states_better_under_B": 21,
+    "median_state_delta_B_minus_A": 0.0019,
+    "states_better_under_B": 34,
     "n_states_compared": 50
   },
-  "arm_C_ma_specialist_c_index": 0.8376,
+  "arm_C_ma_specialist_c_index": 0.8356,
   "arm_D_cost_matched_capacity": {
     "question": "How much of the full RSF's C-index gap to Cox/AFT is the memory-driven coarsening (leaf=50, 10% per-tree subsampling) vs real capacity limits? MA-grade hyperparameters at Arm-C-matched cost on national subsamples.",
     "params": {
@@ -53,106 +53,106 @@
     },
     "n_train_per_seed": 15057,
     "n_seeds": 5,
-    "pooled_c_mean": 0.7879,
-    "pooled_c_sd": 0.0041,
-    "median_state_c_mean": 0.7763,
-    "median_state_c_sd": 0.0043,
+    "pooled_c_mean": 0.7872,
+    "pooled_c_sd": 0.0038,
+    "median_state_c_mean": 0.7772,
+    "median_state_c_sd": 0.0042,
     "per_seed": [
       {
         "seed": 0,
         "n_train": 15056,
-        "pooled_c_index": 0.7889,
-        "median_state_c_index": 0.7717
+        "pooled_c_index": 0.7875,
+        "median_state_c_index": 0.7742
       },
       {
         "seed": 1,
         "n_train": 15056,
-        "pooled_c_index": 0.7878,
-        "median_state_c_index": 0.781
+        "pooled_c_index": 0.7885,
+        "median_state_c_index": 0.7804
       },
       {
         "seed": 2,
         "n_train": 15056,
-        "pooled_c_index": 0.7923,
-        "median_state_c_index": 0.777
+        "pooled_c_index": 0.7908,
+        "median_state_c_index": 0.7758
       },
       {
         "seed": 3,
         "n_train": 15056,
-        "pooled_c_index": 0.7892,
-        "median_state_c_index": 0.7799
+        "pooled_c_index": 0.7885,
+        "median_state_c_index": 0.7826
       },
       {
         "seed": 4,
         "n_train": 15056,
-        "pooled_c_index": 0.7811,
-        "median_state_c_index": 0.772
+        "pooled_c_index": 0.7807,
+        "median_state_c_index": 0.7728
       }
     ],
     "capacity_curve": [
       {
         "n_train_target": 50000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.7973,
+        "pooled_c_mean": 0.7963,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.7862,
+        "median_state_c_mean": 0.7881,
         "per_seed": [
           {
             "seed": 42,
             "n_train": 50006,
-            "pooled_c_index": 0.7973,
-            "median_state_c_index": 0.7862
+            "pooled_c_index": 0.7963,
+            "median_state_c_index": 0.7881
           }
         ]
       },
       {
         "n_train_target": 100000,
         "n_seeds": 3,
-        "pooled_c_mean": 0.8026,
-        "pooled_c_sd": 0.0025,
-        "median_state_c_mean": 0.7929,
+        "pooled_c_mean": 0.8017,
+        "pooled_c_sd": 0.0026,
+        "median_state_c_mean": 0.7922,
         "per_seed": [
           {
             "seed": 42,
             "n_train": 99999,
-            "pooled_c_index": 0.802,
-            "median_state_c_index": 0.7939
+            "pooled_c_index": 0.8016,
+            "median_state_c_index": 0.7919
           },
           {
             "seed": 0,
             "n_train": 99999,
-            "pooled_c_index": 0.8005,
-            "median_state_c_index": 0.7936
+            "pooled_c_index": 0.7991,
+            "median_state_c_index": 0.795
           },
           {
             "seed": 1,
             "n_train": 99999,
-            "pooled_c_index": 0.8053,
-            "median_state_c_index": 0.7912
+            "pooled_c_index": 0.8043,
+            "median_state_c_index": 0.7898
           }
         ]
       },
       {
         "n_train_target": 200000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.8062,
+        "pooled_c_mean": 0.8063,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.8009,
+        "median_state_c_mean": 0.7978,
         "per_seed": [
           {
             "seed": 42,
             "n_train": 199998,
-            "pooled_c_index": 0.8062,
-            "median_state_c_index": 0.8009
+            "pooled_c_index": 0.8063,
+            "median_state_c_index": 0.7978
           }
         ]
       }
     ],
-    "full_rsf_reference": 0.7547,
-    "cox_reference": 0.8835,
-    "aft_reference": 0.8839,
-    "gap_to_cox_full_rsf": 0.1288,
-    "gap_to_cox_arm_D": 0.0956,
-    "gap_to_cox_top_capacity": 0.0773
+    "full_rsf_reference": 0.7526,
+    "cox_reference": 0.883,
+    "aft_reference": 0.8833,
+    "gap_to_cox_full_rsf": 0.1304,
+    "gap_to_cox_arm_D": 0.0958,
+    "gap_to_cox_top_capacity": 0.0767
   }
 }

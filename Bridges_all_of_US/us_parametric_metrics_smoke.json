@@ -1,0 +1,156 @@
+{
+  "generated_utc": "2026-07-20T16:18:24Z",
+  "smoke_test": true,
+  "n_bridges": 20615,
+  "n_train": 16492,
+  "n_test": 4123,
+  "n_features": 154,
+  "penalizer": 0.01,
+  "imputation": "train-median + deduplicated 0/1 missingness flags",
+  "cox_ph": {
+    "c_index_test": 0.8859,
+    "integrated_brier_score": 0.055,
+    "auc_by_horizon": {
+      "25yr": 0.9206,
+      "50yr": 0.933,
+      "75yr": 0.9595
+    },
+    "auc_mean": 0.9512,
+    "fit_seconds": 4.2
+  },
+  "weibull_aft": {
+    "c_index_test": 0.8847,
+    "integrated_brier_score": 0.0547,
+    "auc_by_horizon": {
+      "25yr": 0.9337,
+      "50yr": 0.9341,
+      "75yr": 0.9557
+    },
+    "auc_mean": 0.9491,
+    "fit_seconds": 3.9
+  },
+  "rsf_reference": {
+    "c_index_test": 0.8171,
+    "integrated_brier_score": 0.0753,
+    "auc_mean": 0.9498,
+    "source": "us_rsf_metrics_smoke.json"
+  },
+  "ph_check": {
+    "scope": "full training set (n=16,492)",
+    "time_transform": "rank",
+    "n_covariates": 154,
+    "n_violating_p05": 31,
+    "n_violating_p001": 11,
+    "top10_offenders": [
+      {
+        "covariate": "LAT_UND_MT_055B",
+        "test_statistic": 36.6,
+        "p": 1.471249407577613e-09
+      },
+      {
+        "covariate": "design_load_ordinal",
+        "test_statistic": 33.0,
+        "p": 9.289872464332374e-09
+      },
+      {
+        "covariate": "design_load_ordinal_missing",
+        "test_statistic": 21.5,
+        "p": 3.5251953075076956e-06
+      },
+      {
+        "covariate": "DETOUR_KILOS_019_missing",
+        "test_statistic": 17.2,
+        "p": 3.411154396433881e-05
+      },
+      {
+        "covariate": "BASE_HWY_NETWORK_012_missing",
+        "test_statistic": 16.8,
+        "p": 4.260402234495306e-05
+      },
+      {
+        "covariate": "SURFACE_TYPE_6",
+        "test_statistic": 16.4,
+        "p": 5.08146038373498e-05
+      },
+      {
+        "covariate": "MEMBRANE_TYPE_9",
+        "test_statistic": 16.2,
+        "p": 5.692022814098988e-05
+      },
+      {
+        "covariate": "truck_pct_at_entry",
+        "test_statistic": 15.7,
+        "p": 7.593220753430298e-05
+      },
+      {
+        "covariate": "LEFT_LAT_UND_MT_056",
+        "test_statistic": 14.9,
+        "p": 0.00011509191135393432
+      },
+      {
+        "covariate": "SCOUR_CRITICAL_113",
+        "test_statistic": 12.8,
+        "p": 0.0003446140159904278
+      }
+    ],
+    "interpretation": "At this n, statistically detectable PH violations are expected for most real time-varying effects; Cox is reported as a discriminative benchmark and its hazard ratios read as time-averaged effects."
+  },
+  "cox_effect_size_summary": {
+    "n_features": 154,
+    "n_significant_p001": 30,
+    "n_p001_hr_outside_5pct": 25,
+    "n_p001_hr_outside_10pct": 24,
+    "top_material_effects": [
+      {
+        "feature": "TOLL_020_Other",
+        "hazard_ratio": 0.185,
+        "p": 1.7706400124131107e-05
+      },
+      {
+        "feature": "HIGHWAY_SYSTEM_104_missing",
+        "hazard_ratio": 3.519,
+        "p": 1.9166363808710365e-65
+      },
+      {
+        "feature": "DECK_TYPE_3",
+        "hazard_ratio": 2.869,
+        "p": 8.924159821762086e-13
+      },
+      {
+        "feature": "STRUCTURE_TYPE_043B_7",
+        "hazard_ratio": 0.386,
+        "p": 4.0711254148281545e-07
+      },
+      {
+        "feature": "STATE_44",
+        "hazard_ratio": 2.517,
+        "p": 1.3845706524612378e-32
+      },
+      {
+        "feature": "STRAHNET_HIGHWAY_100_2",
+        "hazard_ratio": 2.49,
+        "p": 2.1067499021943185e-08
+      },
+      {
+        "feature": "MAINTENANCE_31",
+        "hazard_ratio": 2.142,
+        "p": 4.08494284403456e-06
+      },
+      {
+        "feature": "DECK_PROTECTION_1",
+        "hazard_ratio": 0.478,
+        "p": 4.807945038388256e-20
+      },
+      {
+        "feature": "ever_reconstructed",
+        "hazard_ratio": 0.529,
+        "p": 1.4671951181504499e-36
+      },
+      {
+        "feature": "BASE_HWY_NETWORK_012_missing",
+        "hazard_ratio": 1.663,
+        "p": 1.2634364752764354e-16
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-07-20T16:17:37Z",
+  "smoke_test": true,
+  "n_bridges": 20615,
+  "n_train": 16492,
+  "n_test": 4123,
+  "n_features": 148,
+  "event_rate": 0.2286,
+  "rsf_params": {
+    "n_estimators": 25,
+    "max_samples": 0.5,
+    "min_samples_split": 100,
+    "min_samples_leaf": 50,
+    "max_features": "sqrt",
+    "low_memory": false,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "fit_seconds": 0.4,
+  "c_index_test": 0.8171,
+  "integrated_brier_score": 0.0753,
+  "ibs_time_grid": [
+    21.0,
+    31.0,
+    38.0,
+    43.0,
+    49.0,
+    58.0,
+    65.0,
+    74.0,
+    95.0
+  ],
+  "auc_by_horizon": {
+    "25yr": 0.9293,
+    "50yr": 0.9397,
+    "75yr": 0.9544
+  },
+  "auc_mean": 0.9498
+}

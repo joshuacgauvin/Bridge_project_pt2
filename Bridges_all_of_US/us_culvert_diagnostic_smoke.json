@@ -1,0 +1,107 @@
+{
+  "n_total": 21759,
+  "n_culverts": 1122,
+  "culvert_share": 0.0516,
+  "culvert_event_rate": 0.0018,
+  "nonculvert_event_rate": 0.2283,
+  "culvert_share_all_cond_N": 0.9902,
+  "n_all_N_nonculvert": 22,
+  "n_culvert_cond062_poor": 60,
+  "by_structure_type": [
+    {
+      "code": 2.0,
+      "n": 12891,
+      "event_rate": 0.2215,
+      "share_all_cond_N": 0.0007
+    },
+    {
+      "code": 1.0,
+      "n": 1903,
+      "event_rate": 0.1492,
+      "share_all_cond_N": 0.0016
+    },
+    {
+      "code": 11.0,
+      "n": 1339,
+      "event_rate": 0.2233,
+      "share_all_cond_N": 0.003
+    },
+    {
+      "code": 19.0,
+      "n": 1122,
+      "event_rate": 0.0018,
+      "share_all_cond_N": 0.9902
+    },
+    {
+      "code": 4.0,
+      "n": 1042,
+      "event_rate": 0.285,
+      "share_all_cond_N": 0.0029
+    },
+    {
+      "code": 3.0,
+      "n": 841,
+      "event_rate": 0.4245,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 5.0,
+      "n": 800,
+      "event_rate": 0.0862,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 7.0,
+      "n": 549,
+      "event_rate": 0.0656,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 10.0,
+      "n": 535,
+      "event_rate": 0.6075,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 6.0,
+      "n": 304,
+      "event_rate": 0.0362,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 21.0,
+      "n": 96,
+      "event_rate": 0.0104,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 16.0,
+      "n": 93,
+      "event_rate": 0.7097,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 9.0,
+      "n": 85,
+      "event_rate": 0.5529,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 18.0,
+      "n": 42,
+      "event_rate": 0.1429,
+      "share_all_cond_N": 0.0238
+    },
+    {
+      "code": 12.0,
+      "n": 38,
+      "event_rate": 0.4737,
+      "share_all_cond_N": 0.0
+    }
+  ],
+  "culvert_cond062_poor_by_state": {
+    "25": 54,
+    "44": 6
+  },
+  "note": "Event = any of items 58/59/60 <= 4. Culverts report those items as 'N' (recoded 10), so they cannot meaningfully register the event; they are excluded from the study population in the next cell."
+}

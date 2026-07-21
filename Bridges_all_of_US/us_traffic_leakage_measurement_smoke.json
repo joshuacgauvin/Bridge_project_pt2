@@ -1,0 +1,114 @@
+{
+  "adt_measurement_year_kept_row": {
+    "event_median": 1997.0,
+    "censored_median": 1999.0,
+    "note": "the era gap that makes kept-row traffic values a censoring fingerprint"
+  },
+  "covariates": {
+    "ADT_029": {
+      "kept_row": {
+        "event": {
+          "median": 7889.5,
+          "mean": 19658.91,
+          "nan_share": 0.0008
+        },
+        "censored": {
+          "median": 13500.0,
+          "mean": 25022.42,
+          "nan_share": 0.0015
+        }
+      },
+      "entry_row": {
+        "event": {
+          "median": 7700.0,
+          "mean": 20139.46,
+          "nan_share": 0.0015
+        },
+        "censored": {
+          "median": 12500.0,
+          "mean": 25641.36,
+          "nan_share": 0.0022
+        }
+      }
+    },
+    "TRAFFIC_LANES_ON_028A": {
+      "kept_row": {
+        "event": {
+          "median": 2.0,
+          "mean": 2.47,
+          "nan_share": 0.0011
+        },
+        "censored": {
+          "median": 2.0,
+          "mean": 2.61,
+          "nan_share": 0.002
+        }
+      },
+      "entry_row": {
+        "event": {
+          "median": 2.0,
+          "mean": 2.48,
+          "nan_share": 0.0013
+        },
+        "censored": {
+          "median": 2.0,
+          "mean": 2.6,
+          "nan_share": 0.0028
+        }
+      }
+    },
+    "TRAFFIC_LANES_UND_028B": {
+      "kept_row": {
+        "event": {
+          "median": 0.0,
+          "mean": 1.25,
+          "nan_share": 0.0
+        },
+        "censored": {
+          "median": 0.0,
+          "mean": 1.44,
+          "nan_share": 0.0001
+        }
+      },
+      "entry_row": {
+        "event": {
+          "median": 0.0,
+          "mean": 1.19,
+          "nan_share": 0.0002
+        },
+        "censored": {
+          "median": 0.0,
+          "mean": 1.47,
+          "nan_share": 0.0008
+        }
+      }
+    },
+    "PERCENT_ADT_TRUCK_109": {
+      "kept_row": {
+        "event": {
+          "median": 6.0,
+          "mean": 7.48,
+          "nan_share": 0.0127
+        },
+        "censored": {
+          "median": 7.0,
+          "mean": 7.54,
+          "nan_share": 0.0271
+        }
+      },
+      "entry_row": {
+        "event": {
+          "median": 6.0,
+          "mean": 7.42,
+          "nan_share": 0.0176
+        },
+        "censored": {
+          "median": 7.0,
+          "mean": 7.66,
+          "nan_share": 0.014
+        }
+      }
+    }
+  },
+  "note": "Models use only the *_at_entry variants; kept-row ADT_029 / lane counts / truck share are dropped in the encoding cell. Model-level inflation from the kept-row variants is measured in leakage_ablation_national.ipynb."
+}

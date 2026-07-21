@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-15T04:20:21Z",
+  "generated_utc": "2026-07-20T05:40:43Z",
   "smoke_test": false,
   "n_bridges": 973905,
   "n_train": 779124,
@@ -16,9 +16,9 @@
     "n_jobs": -1,
     "random_state": 42
   },
-  "fit_seconds": 9241.2,
-  "c_index_test": 0.7547,
-  "integrated_brier_score": 0.0758,
+  "fit_seconds": 2345.1,
+  "c_index_test": 0.7526,
+  "integrated_brier_score": 0.0761,
   "ibs_time_grid": [
     13.0,
     22.0,
@@ -32,8 +32,8 @@
   ],
   "auc_by_horizon": {
     "25yr": 0.9451,
-    "50yr": 0.9539,
-    "75yr": 0.9274
+    "50yr": 0.9535,
+    "75yr": 0.9281
   },
-  "auc_mean": 0.9381
+  "auc_mean": 0.9383
 }

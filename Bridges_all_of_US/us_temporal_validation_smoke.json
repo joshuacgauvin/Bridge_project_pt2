@@ -1,0 +1,67 @@
+{
+  "design": {
+    "cutoff": 2015,
+    "split": "standard seed-42 80/20 membership; temporal train = 80% split minus bridges built >= cutoff; new-bridge test = ALL bridges built >= cutoff; in-era control = 20% split restricted to pre-cutoff bridges",
+    "hyperparameters": "identical to the shipped full-scale runs",
+    "bootstrap_B": 200
+  },
+  "generated_utc": "2026-07-20T16:19:33Z",
+  "rsf": {
+    "cutoff": 2015,
+    "n_train": 16215,
+    "train_events": 3791,
+    "fit_minutes": 0.0,
+    "in_era_control": {
+      "n": 4057,
+      "events": 919,
+      "c_index": 0.8167
+    },
+    "new_bridges": {
+      "n": 343,
+      "events": 2,
+      "c_index": 0.3532,
+      "c_index_ci95": [
+        0.2137,
+        0.6662
+      ]
+    }
+  },
+  "temporal_cox": {
+    "cutoff": 2015,
+    "n_train": 16215,
+    "train_events": 3791,
+    "in_era_control": {
+      "n": 4057,
+      "events": 919,
+      "c_index": 0.8862
+    },
+    "new_bridges": {
+      "n": 343,
+      "events": 2,
+      "c_index": 0.6596,
+      "c_index_ci95": [
+        0.5271,
+        0.943
+      ]
+    }
+  },
+  "temporal_aft": {
+    "cutoff": 2015,
+    "n_train": 16215,
+    "train_events": 3791,
+    "in_era_control": {
+      "n": 4057,
+      "events": 919,
+      "c_index": 0.8848
+    },
+    "new_bridges": {
+      "n": 343,
+      "events": 2,
+      "c_index": 0.6489,
+      "c_index_ci95": [
+        0.5205,
+        0.9477
+      ]
+    }
+  }
+}

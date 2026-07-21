@@ -9,6 +9,7 @@
 *.feather
 *.pqt
 Bridges_all_of_US/us_bridge_risk_map.json
+Bridges_all_of_US/us_bridge_risk_map_smoke.json
 
 # ---- Generated / cached data directories ----
 Bridges_all_of_US/raw/

@@ -1,0 +1,77 @@
+{
+  "era_free_reference": {
+    "rsf_c_index": 0.8171,
+    "cox_c_index": 0.8859,
+    "aft_c_index": 0.8847,
+    "n_test": 4123,
+    "source": [
+      "us_rsf_metrics_smoke.json",
+      "us_parametric_metrics_smoke.json"
+    ],
+    "note": "shipped era-free models, NOT refit here \u2014 same matrices, same seed-42 split"
+  },
+  "generated_utc": "2026-07-20T16:19:25Z",
+  "design": {
+    "leaky_climate": "per-year climate joined on (grid_lat, grid_lon, kept-row SURVEY_YEAR)",
+    "leaky_reconstruction": "kept-row SURVEY_YEAR - kept-row YEAR_RECONSTRUCTED_106 (retired definition)",
+    "leaky_traffic": "kept-row ADT_029 / lane counts / truck share in place of the *_at_entry variants (retired definition)",
+    "arms": "traffic_only (4 columns swapped) and fully_leaky (23 columns swapped)",
+    "rsf_params": {
+      "n_estimators": 25,
+      "max_samples": 0.5,
+      "min_samples_split": 100,
+      "min_samples_leaf": 50,
+      "max_features": "sqrt",
+      "low_memory": true,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "penalizer": 0.01,
+    "split": "seed-42 80/20, identical rows to the shipped matrices"
+  },
+  "traffic_only_rsf": {
+    "c_index_test": 0.8201,
+    "delta_vs_era_free": 0.003,
+    "n_test": 4123,
+    "fit_minutes": 0.0
+  },
+  "leaky_rsf": {
+    "c_index_test": 0.8696,
+    "delta_vs_era_free": 0.0525,
+    "n_test": 4123,
+    "fit_minutes": 0.0
+  },
+  "traffic_only_cox": {
+    "c_index_test": 0.8791,
+    "delta_vs_era_free": -0.0068,
+    "n_test": 4123
+  },
+  "traffic_only_aft": {
+    "c_index_test": 0.886,
+    "delta_vs_era_free": 0.0013,
+    "n_test": 4123
+  },
+  "leaky_cox": {
+    "c_index_test": 0.9288,
+    "delta_vs_era_free": 0.0429,
+    "n_test": 4123
+  },
+  "leaky_aft": {
+    "c_index_test": 0.9272,
+    "delta_vs_era_free": 0.0425,
+    "n_test": 4123
+  },
+  "deltas": {
+    "traffic_only": {
+      "rsf": 0.003,
+      "cox": -0.0068,
+      "aft": 0.0013
+    },
+    "fully_leaky": {
+      "rsf": 0.0525,
+      "cox": 0.0429,
+      "aft": 0.0425
+    },
+    "note": "Positive = the leaky build inflates the test C-index. traffic_only swaps the 4 kept-row traffic columns; fully_leaky swaps per-year climate + kept-row reconstruction + kept-row traffic (23 columns). Reported as computed, sign included."
+  }
+}

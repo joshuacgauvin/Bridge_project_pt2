@@ -1,0 +1,57 @@
+{
+  "generated_utc": "2026-07-20T16:19:40Z",
+  "method": "paired bootstrap over the shared held-out test set; models not refit",
+  "B": 200,
+  "seed": 2026,
+  "n_test": 4123,
+  "n_test_events": 919,
+  "models": {
+    "rsf": {
+      "c_index": 0.8171,
+      "ci95": [
+        0.8017,
+        0.8317
+      ]
+    },
+    "cox": {
+      "c_index": 0.8859,
+      "ci95": [
+        0.8755,
+        0.8935
+      ]
+    },
+    "aft": {
+      "c_index": 0.8847,
+      "ci95": [
+        0.8748,
+        0.8932
+      ]
+    }
+  },
+  "pairwise_deltas": {
+    "aft_minus_cox": {
+      "delta_point": -0.0012,
+      "ci95": [
+        -0.0027,
+        0.0003
+      ],
+      "p_two_sided": 0.14
+    },
+    "aft_minus_rsf": {
+      "delta_point": 0.0676,
+      "ci95": [
+        0.0546,
+        0.0823
+      ],
+      "p_two_sided": "< 0.01"
+    },
+    "cox_minus_rsf": {
+      "delta_point": 0.0688,
+      "ci95": [
+        0.0556,
+        0.0833
+      ],
+      "p_two_sided": "< 0.01"
+    }
+  }
+}
