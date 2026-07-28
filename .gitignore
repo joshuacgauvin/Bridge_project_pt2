@@ -10,6 +10,9 @@
 *.pqt
 Bridges_all_of_US/us_bridge_risk_map.json
 Bridges_all_of_US/us_bridge_risk_map_smoke.json
+# Arm E resume-safety sidecar; folded into us_ablation_state_dummies.json and deleted
+Bridges_all_of_US/us_ablation_arm_e_stage.json
+Bridges_all_of_US/us_ablation_arm_e_stage_smoke.json
 
 # ---- Generated / cached data directories ----
 Bridges_all_of_US/raw/
@@ -74,6 +77,10 @@ ehthumbs.db
 desktop.ini
 Desktop.ini
 $RECYCLE.BIN/
+
+# ---- Paper drafts ----
+Comparing survival models and measuring the impact of environmental data for predicting bridge deterioration.md
+draft.ipynb
 
 # ---- Scratch / temp ----
 *.tmp

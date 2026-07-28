@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-20T08:41:18Z",
+  "generated_utc": "2026-07-28T22:45:02Z",
   "design": {
     "ablation_train_rows": 299998,
     "shared_test_rows": 194781,
@@ -154,5 +154,79 @@
     "gap_to_cox_full_rsf": 0.1304,
     "gap_to_cox_arm_D": 0.0958,
     "gap_to_cox_top_capacity": 0.0767
+  },
+  "arm_E_climate_contribution": {
+    "question": "What does the environmental block (17 Daymet 1992-2025 cell normals + coastal distance) add over a feature-matched structural baseline at national scale? The PA case study answers this for one state's decks; this answers it on the full cohort for all three models.",
+    "design": {
+      "n_environmental_cols": 18,
+      "environmental_cols": [
+        "annual_max_tmax",
+        "annual_precip_mm",
+        "dist_to_coast_km",
+        "freeze_thaw_cycles",
+        "freezing_index",
+        "heavy_rain_days",
+        "hot_days",
+        "max_1day_precip",
+        "max_swe",
+        "mean_diurnal_range",
+        "mean_srad",
+        "mean_tmax_DJF",
+        "mean_tmax_JJA",
+        "mean_tmin_DJF",
+        "mean_tmin_JJA",
+        "mean_vp",
+        "snow_days",
+        "wet_days"
+      ],
+      "location_imputed_note": "retained in BOTH arms \u2014 a geocoding-quality flag, not an environmental measurement",
+      "scale": "full shipped fidelity \u2014 779,124 train rows at Notebook 5/6 hyperparameters, not the 300,000-row matched-cost budget used by arms A-D",
+      "n_train": 779124,
+      "rsf_params": {
+        "n_estimators": 200,
+        "max_samples": 0.1,
+        "min_samples_split": 100,
+        "min_samples_leaf": 50,
+        "max_features": "sqrt",
+        "low_memory": true,
+        "n_jobs": -1,
+        "random_state": 42
+      },
+      "penalizer": 0.01,
+      "bootstrap_B": 1000,
+      "bootstrap_seed": 2026,
+      "n_test": 194781,
+      "n_test_events": 57065
+    },
+    "rsf": {
+      "c_baseline": 0.7355,
+      "c_climate": 0.7526,
+      "delta": 0.0171,
+      "delta_ci95": [
+        0.0165,
+        0.0176
+      ],
+      "p_two_sided": "< 0.002"
+    },
+    "cox": {
+      "c_baseline": 0.8825,
+      "c_climate": 0.883,
+      "delta": 0.0005,
+      "delta_ci95": [
+        0.0004,
+        0.0006
+      ],
+      "p_two_sided": "< 0.002"
+    },
+    "aft": {
+      "c_baseline": 0.8828,
+      "c_climate": 0.8833,
+      "delta": 0.0004,
+      "delta_ci95": [
+        0.0003,
+        0.0006
+      ],
+      "p_two_sided": "< 0.002"
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 Runs the notebook chain headlessly and verifies it reproduces the tracked artifacts.
 
-Default (smoke) mode — ~15-30 min:
+Default (smoke) mode:
     python reproduce_check.py
   Each notebook is executed with its smoke switch patched IN MEMORY ONLY
   (STATE_SUBSET = ["MA", "RI"] for the dataset build — MA must be present because the
@@ -12,7 +12,7 @@ Default (smoke) mode — ~15-30 min:
   HEAD. Smoke artifacts are deleted before their producer runs, so stale keys from
   older schema versions cannot linger through the stage-save merge pattern.
 
-Full mode — the real pipeline, ~13-16 h:
+Full mode — the real pipeline:
     python reproduce_check.py --full
   Runs the chain unpatched and compares the tracked full-scale JSONs and the four
   tracked CSVs (hazard ratios, AFT coefficients, per-state C-index, feature
