@@ -5,7 +5,7 @@
     "hyperparameters": "identical to the shipped full-scale runs",
     "bootstrap_B": 200
   },
-  "generated_utc": "2026-07-20T16:19:33Z",
+  "generated_utc": "2026-07-29T16:40:42Z",
   "rsf": {
     "cutoff": 2015,
     "n_train": 16215,

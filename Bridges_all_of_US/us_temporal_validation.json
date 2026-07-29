@@ -5,7 +5,7 @@
     "hyperparameters": "identical to the shipped full-scale runs",
     "bootstrap_B": 1000
   },
-  "generated_utc": "2026-07-20T11:03:17Z",
+  "generated_utc": "2026-07-29T17:07:16Z",
   "rsf": {
     "cutoff": 2015,
     "n_train": 752897,
@@ -99,6 +99,26 @@
       "c_index_ci95": [
         0.76,
         0.8151
+      ]
+    }
+  },
+  "robustness_2010_rsf": {
+    "cutoff": 2010,
+    "n_train": 735771,
+    "train_events": 227779,
+    "fit_minutes": 26.4,
+    "in_era_control": {
+      "n": 183852,
+      "events": 57000,
+      "c_index": 0.7541
+    },
+    "new_bridges": {
+      "n": 54282,
+      "events": 303,
+      "c_index": 0.8574,
+      "c_index_ci95": [
+        0.8316,
+        0.8819
       ]
     }
   }
