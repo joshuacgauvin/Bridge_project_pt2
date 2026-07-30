@@ -1,33 +1,33 @@
 {
   "adt_measurement_year_kept_row": {
     "event_median": 1997.0,
-    "censored_median": 1999.0,
+    "censored_median": 2017.0,
     "note": "the era gap that makes kept-row traffic values a censoring fingerprint"
   },
   "covariates": {
     "ADT_029": {
       "kept_row": {
         "event": {
-          "median": 7889.5,
-          "mean": 19658.91,
-          "nan_share": 0.0008
+          "median": 7654.0,
+          "mean": 19653.14,
+          "nan_share": 0.0012
         },
         "censored": {
-          "median": 13500.0,
-          "mean": 25022.42,
-          "nan_share": 0.0015
+          "median": 11589.5,
+          "mean": 21943.98,
+          "nan_share": 0.0016
         }
       },
       "entry_row": {
         "event": {
-          "median": 7700.0,
-          "mean": 20139.46,
-          "nan_share": 0.0015
+          "median": 7654.0,
+          "mean": 19910.35,
+          "nan_share": 0.0027
         },
         "censored": {
-          "median": 12500.0,
-          "mean": 25641.36,
-          "nan_share": 0.0022
+          "median": 10000.0,
+          "mean": 23422.74,
+          "nan_share": 0.0042
         }
       }
     },
@@ -36,24 +36,24 @@
         "event": {
           "median": 2.0,
           "mean": 2.47,
-          "nan_share": 0.0011
+          "nan_share": 0.0015
         },
         "censored": {
           "median": 2.0,
-          "mean": 2.61,
-          "nan_share": 0.002
+          "mean": 2.55,
+          "nan_share": 0.0042
         }
       },
       "entry_row": {
         "event": {
           "median": 2.0,
-          "mean": 2.48,
-          "nan_share": 0.0013
+          "mean": 2.49,
+          "nan_share": 0.0015
         },
         "censored": {
           "median": 2.0,
-          "mean": 2.6,
-          "nan_share": 0.0028
+          "mean": 2.54,
+          "nan_share": 0.0049
         }
       }
     },
@@ -61,25 +61,25 @@
       "kept_row": {
         "event": {
           "median": 0.0,
-          "mean": 1.25,
+          "mean": 1.32,
           "nan_share": 0.0
         },
         "censored": {
           "median": 0.0,
-          "mean": 1.44,
-          "nan_share": 0.0001
+          "mean": 1.46,
+          "nan_share": 0.0003
         }
       },
       "entry_row": {
         "event": {
           "median": 0.0,
-          "mean": 1.19,
-          "nan_share": 0.0002
+          "mean": 1.26,
+          "nan_share": 0.0003
         },
         "censored": {
           "median": 0.0,
-          "mean": 1.47,
-          "nan_share": 0.0008
+          "mean": 1.51,
+          "nan_share": 0.0018
         }
       }
     },
@@ -87,25 +87,25 @@
       "kept_row": {
         "event": {
           "median": 6.0,
-          "mean": 7.48,
-          "nan_share": 0.0127
+          "mean": 7.54,
+          "nan_share": 0.0169
         },
         "censored": {
-          "median": 7.0,
-          "mean": 7.54,
-          "nan_share": 0.0271
+          "median": 6.0,
+          "mean": 7.05,
+          "nan_share": 0.0497
         }
       },
       "entry_row": {
         "event": {
           "median": 6.0,
-          "mean": 7.42,
-          "nan_share": 0.0176
+          "mean": 7.47,
+          "nan_share": 0.0286
         },
         "censored": {
-          "median": 7.0,
-          "mean": 7.66,
-          "nan_share": 0.014
+          "median": 6.0,
+          "mean": 7.28,
+          "nan_share": 0.0266
         }
       }
     }

@@ -1,59 +1,59 @@
 {
-  "scope": "stratified (state x event) 99,999-row training subsample (29,265 events), identical refit \u2014 the full-train test is quadratic in events (~19 h measured extrapolation)",
+  "scope": "stratified (state x event) 100,001-row training subsample (31,807 events), identical refit \u2014 the full-train test is quadratic in events (~19 h measured extrapolation)",
   "time_transform": "rank",
   "n_covariates": 266,
-  "n_violating_p05": 86,
-  "n_violating_p001": 42,
+  "n_violating_p05": 72,
+  "n_violating_p001": 37,
   "top10_offenders": [
     {
       "covariate": "YEAR_BUILT_027",
-      "test_statistic": 488.5,
-      "p": 3.0639484137449907e-108
+      "test_statistic": 610.3,
+      "p": 9.512653892201489e-135
     },
     {
       "covariate": "BASE_HWY_NETWORK_012_missing",
-      "test_statistic": 114.3,
-      "p": 1.1009023085378926e-26
+      "test_statistic": 173.8,
+      "p": 1.1194643843843743e-39
+    },
+    {
+      "covariate": "DECK_PROTECTION_1",
+      "test_statistic": 67.9,
+      "p": 1.7149379008458993e-16
     },
     {
       "covariate": "SURFACE_TYPE_1",
-      "test_statistic": 107.1,
-      "p": 4.27134310350193e-25
-    },
-    {
-      "covariate": "STATE_47",
-      "test_statistic": 87.5,
-      "p": 8.322168671709775e-21
-    },
-    {
-      "covariate": "SURFACE_TYPE_7",
-      "test_statistic": 56.8,
-      "p": 4.7770890267522586e-14
+      "test_statistic": 61.7,
+      "p": 3.920495458647133e-15
     },
     {
       "covariate": "DECK_TYPE_9",
-      "test_statistic": 52.9,
-      "p": 3.5124930185418844e-13
+      "test_statistic": 54.3,
+      "p": 1.680819701924733e-13
     },
     {
-      "covariate": "BASE_HWY_NETWORK_012",
-      "test_statistic": 49.2,
-      "p": 2.2568187623512094e-12
+      "covariate": "SURFACE_TYPE_7",
+      "test_statistic": 53.1,
+      "p": 3.2228858266473004e-13
     },
     {
-      "covariate": "SCOUR_CRITICAL_113",
-      "test_statistic": 45.1,
-      "p": 1.865125515191005e-11
+      "covariate": "STATE_47",
+      "test_statistic": 39.3,
+      "p": 3.56621667357064e-10
     },
     {
-      "covariate": "DECK_TYPE_6",
-      "test_statistic": 43.2,
-      "p": 5.0259685379089484e-11
+      "covariate": "STATE_31",
+      "test_statistic": 35.5,
+      "p": 2.6156459335812057e-09
     },
     {
-      "covariate": "LAT_UND_MT_055B_missing",
-      "test_statistic": 40.3,
-      "p": 2.1697537697057612e-10
+      "covariate": "MAX_SPAN_LEN_MT_048",
+      "test_statistic": 34.1,
+      "p": 5.1657458610297915e-09
+    },
+    {
+      "covariate": "ROAD_CLASS_Interstate",
+      "test_statistic": 28.8,
+      "p": 7.924938937170492e-08
     }
   ],
   "interpretation": "At this n, statistically detectable PH violations are expected for most real time-varying effects; Cox is reported as a discriminative benchmark and its hazard ratios read as time-averaged effects."

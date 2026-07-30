@@ -5,6 +5,10 @@
 !us_aft_coefficients.csv
 !us_rsf_cindex_by_state.csv
 !us_rsf_feature_importance.csv
+# Structure-renumbering chain map: a pipeline INPUT to Notebook 4, derived from the
+# gitignored raw panels. Tracked (8 MB) so the stitched build is reproducible without
+# redistributing 11 GB of raw NBI.
+!us_record_split_chains.csv
 *.parquet
 *.feather
 *.pqt

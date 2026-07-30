@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-07-28T22:45:02Z",
+  "generated_utc": "2026-07-30T10:50:35Z",
   "design": {
-    "ablation_train_rows": 299998,
-    "shared_test_rows": 194781,
+    "ablation_train_rows": 299996,
+    "shared_test_rows": 160460,
     "ablation_params": {
       "n_estimators": 100,
       "max_samples": 0.2,
@@ -25,21 +25,21 @@
     "n_state_dummies": 51
   },
   "arm_A_with_state": {
-    "pooled_c_index": 0.7542,
-    "median_state_c_index": 0.7457,
-    "ma_c_index": 0.6755
+    "pooled_c_index": 0.7677,
+    "median_state_c_index": 0.7512,
+    "ma_c_index": 0.6544
   },
   "arm_B_without_state": {
-    "pooled_c_index": 0.7532,
-    "median_state_c_index": 0.7472,
-    "ma_c_index": 0.6715
+    "pooled_c_index": 0.7698,
+    "median_state_c_index": 0.7524,
+    "ma_c_index": 0.6575
   },
   "delta_summary": {
-    "median_state_delta_B_minus_A": 0.0019,
-    "states_better_under_B": 34,
+    "median_state_delta_B_minus_A": 0.0033,
+    "states_better_under_B": 41,
     "n_states_compared": 50
   },
-  "arm_C_ma_specialist_c_index": 0.8356,
+  "arm_C_ma_specialist_c_index": 0.8025,
   "arm_D_cost_matched_capacity": {
     "question": "How much of the full RSF's C-index gap to Cox/AFT is the memory-driven coarsening (leaf=50, 10% per-tree subsampling) vs real capacity limits? MA-grade hyperparameters at Arm-C-matched cost on national subsamples.",
     "params": {
@@ -51,109 +51,109 @@
       "n_jobs": -1,
       "random_state": 42
     },
-    "n_train_per_seed": 15057,
+    "n_train_per_seed": 7526,
     "n_seeds": 5,
-    "pooled_c_mean": 0.7872,
-    "pooled_c_sd": 0.0038,
-    "median_state_c_mean": 0.7772,
-    "median_state_c_sd": 0.0042,
+    "pooled_c_mean": 0.7895,
+    "pooled_c_sd": 0.0022,
+    "median_state_c_mean": 0.7701,
+    "median_state_c_sd": 0.0056,
     "per_seed": [
       {
         "seed": 0,
-        "n_train": 15056,
+        "n_train": 7527,
         "pooled_c_index": 0.7875,
-        "median_state_c_index": 0.7742
+        "median_state_c_index": 0.7626
       },
       {
         "seed": 1,
-        "n_train": 15056,
-        "pooled_c_index": 0.7885,
-        "median_state_c_index": 0.7804
+        "n_train": 7527,
+        "pooled_c_index": 0.7891,
+        "median_state_c_index": 0.7728
       },
       {
         "seed": 2,
-        "n_train": 15056,
-        "pooled_c_index": 0.7908,
-        "median_state_c_index": 0.7758
+        "n_train": 7527,
+        "pooled_c_index": 0.7889,
+        "median_state_c_index": 0.7726
       },
       {
         "seed": 3,
-        "n_train": 15056,
-        "pooled_c_index": 0.7885,
-        "median_state_c_index": 0.7826
+        "n_train": 7527,
+        "pooled_c_index": 0.7933,
+        "median_state_c_index": 0.7661
       },
       {
         "seed": 4,
-        "n_train": 15056,
-        "pooled_c_index": 0.7807,
-        "median_state_c_index": 0.7728
+        "n_train": 7527,
+        "pooled_c_index": 0.7888,
+        "median_state_c_index": 0.7764
       }
     ],
     "capacity_curve": [
       {
         "n_train_target": 50000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.7963,
+        "pooled_c_mean": 0.8062,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.7881,
+        "median_state_c_mean": 0.7856,
         "per_seed": [
           {
             "seed": 42,
-            "n_train": 50006,
-            "pooled_c_index": 0.7963,
-            "median_state_c_index": 0.7881
+            "n_train": 50004,
+            "pooled_c_index": 0.8062,
+            "median_state_c_index": 0.7856
           }
         ]
       },
       {
         "n_train_target": 100000,
         "n_seeds": 3,
-        "pooled_c_mean": 0.8017,
-        "pooled_c_sd": 0.0026,
-        "median_state_c_mean": 0.7922,
+        "pooled_c_mean": 0.8096,
+        "pooled_c_sd": 0.0014,
+        "median_state_c_mean": 0.7901,
         "per_seed": [
           {
             "seed": 42,
-            "n_train": 99999,
-            "pooled_c_index": 0.8016,
-            "median_state_c_index": 0.7919
+            "n_train": 100001,
+            "pooled_c_index": 0.8109,
+            "median_state_c_index": 0.7911
           },
           {
             "seed": 0,
-            "n_train": 99999,
-            "pooled_c_index": 0.7991,
-            "median_state_c_index": 0.795
+            "n_train": 100001,
+            "pooled_c_index": 0.8081,
+            "median_state_c_index": 0.7864
           },
           {
             "seed": 1,
-            "n_train": 99999,
-            "pooled_c_index": 0.8043,
-            "median_state_c_index": 0.7898
+            "n_train": 100001,
+            "pooled_c_index": 0.8099,
+            "median_state_c_index": 0.7928
           }
         ]
       },
       {
         "n_train_target": 200000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.8063,
+        "pooled_c_mean": 0.8143,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.7978,
+        "median_state_c_mean": 0.7956,
         "per_seed": [
           {
             "seed": 42,
-            "n_train": 199998,
-            "pooled_c_index": 0.8063,
-            "median_state_c_index": 0.7978
+            "n_train": 199993,
+            "pooled_c_index": 0.8143,
+            "median_state_c_index": 0.7956
           }
         ]
       }
     ],
-    "full_rsf_reference": 0.7526,
+    "full_rsf_reference": 0.7671,
     "cox_reference": 0.883,
-    "aft_reference": 0.8833,
-    "gap_to_cox_full_rsf": 0.1304,
-    "gap_to_cox_arm_D": 0.0958,
-    "gap_to_cox_top_capacity": 0.0767
+    "aft_reference": 0.8834,
+    "gap_to_cox_full_rsf": 0.1159,
+    "gap_to_cox_arm_D": 0.0935,
+    "gap_to_cox_top_capacity": 0.0687
   },
   "arm_E_climate_contribution": {
     "question": "What does the environmental block (17 Daymet 1992-2025 cell normals + coastal distance) add over a feature-matched structural baseline at national scale? The PA case study answers this for one state's decks; this answers it on the full cohort for all three models.",
@@ -180,8 +180,8 @@
         "wet_days"
       ],
       "location_imputed_note": "retained in BOTH arms \u2014 a geocoding-quality flag, not an environmental measurement",
-      "scale": "full shipped fidelity \u2014 779,124 train rows at Notebook 5/6 hyperparameters, not the 300,000-row matched-cost budget used by arms A-D",
-      "n_train": 779124,
+      "scale": "full shipped fidelity \u2014 641,836 train rows at Notebook 5/6 hyperparameters, not the 300,000-row matched-cost budget used by arms A-D",
+      "n_train": 641836,
       "rsf_params": {
         "n_estimators": 200,
         "max_samples": 0.1,
@@ -195,36 +195,36 @@
       "penalizer": 0.01,
       "bootstrap_B": 1000,
       "bootstrap_seed": 2026,
-      "n_test": 194781,
-      "n_test_events": 57065
+      "n_test": 160460,
+      "n_test_events": 50732
     },
     "rsf": {
-      "c_baseline": 0.7355,
-      "c_climate": 0.7526,
-      "delta": 0.0171,
+      "c_baseline": 0.7531,
+      "c_climate": 0.7671,
+      "delta": 0.014,
       "delta_ci95": [
-        0.0165,
-        0.0176
+        0.0135,
+        0.0145
       ],
       "p_two_sided": "< 0.002"
     },
     "cox": {
-      "c_baseline": 0.8825,
+      "c_baseline": 0.8824,
       "c_climate": 0.883,
-      "delta": 0.0005,
+      "delta": 0.0006,
       "delta_ci95": [
-        0.0004,
-        0.0006
+        0.0005,
+        0.0007
       ],
       "p_two_sided": "< 0.002"
     },
     "aft": {
       "c_baseline": 0.8828,
-      "c_climate": 0.8833,
-      "delta": 0.0004,
+      "c_climate": 0.8834,
+      "delta": 0.0006,
       "delta_ci95": [
-        0.0003,
-        0.0006
+        0.0005,
+        0.0007
       ],
       "p_two_sided": "< 0.002"
     }

@@ -1,107 +1,107 @@
 {
-  "n_total": 21759,
-  "n_culverts": 1122,
-  "culvert_share": 0.0516,
-  "culvert_event_rate": 0.0018,
-  "nonculvert_event_rate": 0.2283,
-  "culvert_share_all_cond_N": 0.9902,
-  "n_all_N_nonculvert": 22,
-  "n_culvert_cond062_poor": 60,
+  "n_total": 11394,
+  "n_culverts": 655,
+  "culvert_share": 0.0575,
+  "culvert_event_rate": 0.0031,
+  "nonculvert_event_rate": 0.3091,
+  "culvert_share_all_cond_N": 0.9939,
+  "n_all_N_nonculvert": 10,
+  "n_culvert_cond062_poor": 48,
   "by_structure_type": [
     {
       "code": 2.0,
-      "n": 12891,
-      "event_rate": 0.2215,
-      "share_all_cond_N": 0.0007
+      "n": 6549,
+      "event_rate": 0.3141,
+      "share_all_cond_N": 0.0008
     },
     {
       "code": 1.0,
-      "n": 1903,
-      "event_rate": 0.1492,
-      "share_all_cond_N": 0.0016
+      "n": 1049,
+      "event_rate": 0.2126,
+      "share_all_cond_N": 0.0
     },
     {
       "code": 11.0,
-      "n": 1339,
-      "event_rate": 0.2233,
-      "share_all_cond_N": 0.003
+      "n": 736,
+      "event_rate": 0.2894,
+      "share_all_cond_N": 0.0014
     },
     {
       "code": 19.0,
-      "n": 1122,
-      "event_rate": 0.0018,
-      "share_all_cond_N": 0.9902
+      "n": 655,
+      "event_rate": 0.0031,
+      "share_all_cond_N": 0.9939
     },
     {
       "code": 4.0,
-      "n": 1042,
-      "event_rate": 0.285,
-      "share_all_cond_N": 0.0029
-    },
-    {
-      "code": 3.0,
-      "n": 841,
-      "event_rate": 0.4245,
-      "share_all_cond_N": 0.0
+      "n": 484,
+      "event_rate": 0.3884,
+      "share_all_cond_N": 0.0021
     },
     {
       "code": 5.0,
-      "n": 800,
-      "event_rate": 0.0862,
+      "n": 442,
+      "event_rate": 0.129,
       "share_all_cond_N": 0.0
     },
     {
-      "code": 7.0,
-      "n": 549,
-      "event_rate": 0.0656,
+      "code": 3.0,
+      "n": 423,
+      "event_rate": 0.5461,
       "share_all_cond_N": 0.0
     },
     {
       "code": 10.0,
-      "n": 535,
-      "event_rate": 0.6075,
+      "n": 309,
+      "event_rate": 0.7087,
+      "share_all_cond_N": 0.0
+    },
+    {
+      "code": 7.0,
+      "n": 289,
+      "event_rate": 0.0796,
       "share_all_cond_N": 0.0
     },
     {
       "code": 6.0,
-      "n": 304,
-      "event_rate": 0.0362,
+      "n": 213,
+      "event_rate": 0.0376,
       "share_all_cond_N": 0.0
     },
     {
       "code": 21.0,
-      "n": 96,
-      "event_rate": 0.0104,
+      "n": 67,
+      "event_rate": 0.0149,
       "share_all_cond_N": 0.0
     },
     {
       "code": 16.0,
-      "n": 93,
-      "event_rate": 0.7097,
+      "n": 44,
+      "event_rate": 0.7727,
       "share_all_cond_N": 0.0
     },
     {
       "code": 9.0,
-      "n": 85,
-      "event_rate": 0.5529,
+      "n": 35,
+      "event_rate": 0.7143,
       "share_all_cond_N": 0.0
     },
     {
-      "code": 18.0,
-      "n": 42,
-      "event_rate": 0.1429,
-      "share_all_cond_N": 0.0238
+      "code": 12.0,
+      "n": 24,
+      "event_rate": 0.4583,
+      "share_all_cond_N": 0.0
     },
     {
-      "code": 12.0,
-      "n": 38,
-      "event_rate": 0.4737,
+      "code": 17.0,
+      "n": 21,
+      "event_rate": 0.8571,
       "share_all_cond_N": 0.0
     }
   ],
   "culvert_cond062_poor_by_state": {
-    "25": 54,
-    "44": 6
+    "25": 43,
+    "44": 5
   },
   "note": "Event = any of items 58/59/60 <= 4. Culverts report those items as 'N' (recoded 10), so they cannot meaningfully register the event; they are excluded from the study population in the next cell."
 }

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-07-20T05:40:43Z",
+  "generated_utc": "2026-07-30T05:55:03Z",
   "smoke_test": false,
-  "n_bridges": 973905,
-  "n_train": 779124,
-  "n_test": 194781,
+  "n_bridges": 802296,
+  "n_train": 641836,
+  "n_test": 160460,
   "n_features": 255,
-  "event_rate": 0.2927,
+  "event_rate": 0.3177,
   "rsf_params": {
     "n_estimators": 200,
     "max_samples": 0.1,
@@ -16,24 +16,24 @@
     "n_jobs": -1,
     "random_state": 42
   },
-  "fit_seconds": 2345.1,
-  "c_index_test": 0.7526,
-  "integrated_brier_score": 0.0761,
+  "fit_seconds": 2005.9,
+  "c_index_test": 0.7671,
+  "integrated_brier_score": 0.0816,
   "ibs_time_grid": [
-    13.0,
-    22.0,
+    14.0,
+    23.0,
     30.0,
-    36.0,
-    42.0,
+    37.0,
+    43.0,
     50.0,
     57.0,
-    64.0,
+    65.0,
     78.0
   ],
   "auc_by_horizon": {
-    "25yr": 0.9451,
-    "50yr": 0.9535,
-    "75yr": 0.9281
+    "25yr": 0.9377,
+    "50yr": 0.9445,
+    "75yr": 0.915
   },
-  "auc_mean": 0.9383
+  "auc_mean": 0.9277
 }

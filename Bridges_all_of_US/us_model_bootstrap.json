@@ -1,16 +1,16 @@
 {
-  "generated_utc": "2026-07-20T11:36:41Z",
+  "generated_utc": "2026-07-30T13:19:59Z",
   "method": "paired bootstrap over the shared held-out test set; models not refit",
   "B": 1000,
   "seed": 2026,
-  "n_test": 194781,
-  "n_test_events": 57065,
+  "n_test": 160460,
+  "n_test_events": 50732,
   "models": {
     "rsf": {
-      "c_index": 0.7526,
+      "c_index": 0.7671,
       "ci95": [
-        0.7504,
-        0.7549
+        0.765,
+        0.7693
       ]
     },
     "cox": {
@@ -21,35 +21,35 @@
       ]
     },
     "aft": {
-      "c_index": 0.8833,
+      "c_index": 0.8834,
       "ci95": [
-        0.8819,
-        0.8846
+        0.882,
+        0.8847
       ]
     }
   },
   "pairwise_deltas": {
     "aft_minus_cox": {
-      "delta_point": 0.0003,
+      "delta_point": 0.0004,
       "ci95": [
-        0.0001,
-        0.0005
+        0.0002,
+        0.0006
       ],
-      "p_two_sided": 0.002
+      "p_two_sided": "< 0.002"
     },
     "aft_minus_rsf": {
-      "delta_point": 0.1307,
+      "delta_point": 0.1163,
       "ci95": [
-        0.129,
-        0.1325
+        0.1146,
+        0.1179
       ],
       "p_two_sided": "< 0.002"
     },
     "cox_minus_rsf": {
-      "delta_point": 0.1304,
+      "delta_point": 0.1159,
       "ci95": [
-        0.1287,
-        0.1322
+        0.1141,
+        0.1175
       ],
       "p_two_sided": "< 0.002"
     }

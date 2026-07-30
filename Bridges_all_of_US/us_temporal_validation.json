@@ -5,120 +5,120 @@
     "hyperparameters": "identical to the shipped full-scale runs",
     "bootstrap_B": 1000
   },
-  "generated_utc": "2026-07-29T17:07:16Z",
+  "generated_utc": "2026-07-30T12:52:54Z",
   "rsf": {
     "cutoff": 2015,
-    "n_train": 752897,
-    "train_events": 227941,
-    "fit_minutes": 27.4,
+    "n_train": 615890,
+    "train_events": 204070,
+    "fit_minutes": 16.8,
     "in_era_control": {
-      "n": 188239,
-      "events": 57045,
-      "c_index": 0.7536
+      "n": 153858,
+      "events": 50707,
+      "c_index": 0.7669
     },
     "new_bridges": {
-      "n": 32769,
-      "events": 96,
-      "c_index": 0.8365,
+      "n": 32548,
+      "events": 95,
+      "c_index": 0.8283,
       "c_index_ci95": [
-        0.7859,
-        0.8797
+        0.7776,
+        0.877
       ]
     }
   },
   "temporal_cox": {
     "cutoff": 2015,
-    "n_train": 752897,
-    "train_events": 227941,
+    "n_train": 615890,
+    "train_events": 204070,
     "in_era_control": {
-      "n": 188239,
-      "events": 57045,
+      "n": 153858,
+      "events": 50707,
       "c_index": 0.8835
     },
     "new_bridges": {
-      "n": 32769,
-      "events": 96,
-      "c_index": 0.7931,
+      "n": 32548,
+      "events": 95,
+      "c_index": 0.7934,
       "c_index_ci95": [
-        0.7305,
-        0.8431
+        0.7369,
+        0.8445
       ]
     }
   },
   "temporal_aft": {
     "cutoff": 2015,
-    "n_train": 752897,
-    "train_events": 227941,
+    "n_train": 615890,
+    "train_events": 204070,
     "in_era_control": {
-      "n": 188239,
-      "events": 57045,
-      "c_index": 0.8834
+      "n": 153858,
+      "events": 50707,
+      "c_index": 0.8835
     },
     "new_bridges": {
-      "n": 32769,
-      "events": 96,
-      "c_index": 0.7972,
+      "n": 32548,
+      "events": 95,
+      "c_index": 0.7963,
       "c_index_ci95": [
-        0.7386,
-        0.8425
+        0.7428,
+        0.8464
       ]
     }
   },
   "robustness_2010_cox": {
     "cutoff": 2010,
-    "n_train": 735771,
-    "train_events": 227779,
+    "n_train": 599020,
+    "train_events": 203898,
     "in_era_control": {
-      "n": 183852,
-      "events": 57000,
+      "n": 149611,
+      "events": 50674,
       "c_index": 0.8838
     },
     "new_bridges": {
-      "n": 54282,
-      "events": 303,
-      "c_index": 0.7804,
+      "n": 53665,
+      "events": 300,
+      "c_index": 0.78,
       "c_index_ci95": [
-        0.7515,
-        0.8097
+        0.7493,
+        0.8107
       ]
     }
   },
   "robustness_2010_aft": {
     "cutoff": 2010,
-    "n_train": 735771,
-    "train_events": 227779,
+    "n_train": 599020,
+    "train_events": 203898,
     "in_era_control": {
-      "n": 183852,
-      "events": 57000,
-      "c_index": 0.8833
+      "n": 149611,
+      "events": 50674,
+      "c_index": 0.8835
     },
     "new_bridges": {
-      "n": 54282,
-      "events": 303,
-      "c_index": 0.788,
+      "n": 53665,
+      "events": 300,
+      "c_index": 0.7868,
       "c_index_ci95": [
-        0.76,
-        0.8151
+        0.757,
+        0.8155
       ]
     }
   },
   "robustness_2010_rsf": {
     "cutoff": 2010,
-    "n_train": 735771,
-    "train_events": 227779,
-    "fit_minutes": 26.4,
+    "n_train": 599020,
+    "train_events": 203898,
+    "fit_minutes": 15.0,
     "in_era_control": {
-      "n": 183852,
-      "events": 57000,
-      "c_index": 0.7541
+      "n": 149611,
+      "events": 50674,
+      "c_index": 0.7673
     },
     "new_bridges": {
-      "n": 54282,
-      "events": 303,
-      "c_index": 0.8574,
+      "n": 53665,
+      "events": 300,
+      "c_index": 0.8539,
       "c_index_ci95": [
-        0.8316,
-        0.8819
+        0.8294,
+        0.8781
       ]
     }
   }
