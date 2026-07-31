@@ -1,155 +1,155 @@
 {
-  "generated_utc": "2026-07-20T16:18:24Z",
+  "generated_utc": "2026-07-30T23:05:03Z",
   "smoke_test": true,
-  "n_bridges": 20615,
-  "n_train": 16492,
-  "n_test": 4123,
-  "n_features": 154,
+  "n_bridges": 10729,
+  "n_train": 8583,
+  "n_test": 2146,
+  "n_features": 146,
   "penalizer": 0.01,
   "imputation": "train-median + deduplicated 0/1 missingness flags",
   "cox_ph": {
-    "c_index_test": 0.8859,
-    "integrated_brier_score": 0.055,
+    "c_index_test": 0.8616,
+    "integrated_brier_score": 0.0591,
     "auc_by_horizon": {
-      "25yr": 0.9206,
-      "50yr": 0.933,
-      "75yr": 0.9595
+      "25yr": 0.9768,
+      "50yr": 0.9086,
+      "75yr": 0.9539
     },
-    "auc_mean": 0.9512,
-    "fit_seconds": 4.2
+    "auc_mean": 0.9387,
+    "fit_seconds": 23.3
   },
   "weibull_aft": {
-    "c_index_test": 0.8847,
-    "integrated_brier_score": 0.0547,
+    "c_index_test": 0.8624,
+    "integrated_brier_score": 0.0583,
     "auc_by_horizon": {
-      "25yr": 0.9337,
-      "50yr": 0.9341,
-      "75yr": 0.9557
+      "25yr": 0.9767,
+      "50yr": 0.9104,
+      "75yr": 0.9513
     },
-    "auc_mean": 0.9491,
-    "fit_seconds": 3.9
+    "auc_mean": 0.9376,
+    "fit_seconds": 2.7
   },
   "rsf_reference": {
-    "c_index_test": 0.8171,
-    "integrated_brier_score": 0.0753,
-    "auc_mean": 0.9498,
+    "c_index_test": 0.7964,
+    "integrated_brier_score": 0.0909,
+    "auc_mean": 0.9059,
     "source": "us_rsf_metrics_smoke.json"
   },
   "ph_check": {
-    "scope": "full training set (n=16,492)",
+    "scope": "full training set (n=8,583)",
     "time_transform": "rank",
-    "n_covariates": 154,
-    "n_violating_p05": 31,
-    "n_violating_p001": 11,
+    "n_covariates": 146,
+    "n_violating_p05": 29,
+    "n_violating_p001": 8,
     "top10_offenders": [
       {
-        "covariate": "LAT_UND_MT_055B",
-        "test_statistic": 36.6,
-        "p": 1.471249407577613e-09
-      },
-      {
-        "covariate": "design_load_ordinal",
-        "test_statistic": 33.0,
-        "p": 9.289872464332374e-09
-      },
-      {
-        "covariate": "design_load_ordinal_missing",
-        "test_statistic": 21.5,
-        "p": 3.5251953075076956e-06
-      },
-      {
-        "covariate": "DETOUR_KILOS_019_missing",
-        "test_statistic": 17.2,
-        "p": 3.411154396433881e-05
-      },
-      {
-        "covariate": "BASE_HWY_NETWORK_012_missing",
-        "test_statistic": 16.8,
-        "p": 4.260402234495306e-05
-      },
-      {
-        "covariate": "SURFACE_TYPE_6",
-        "test_statistic": 16.4,
-        "p": 5.08146038373498e-05
-      },
-      {
-        "covariate": "MEMBRANE_TYPE_9",
-        "test_statistic": 16.2,
-        "p": 5.692022814098988e-05
-      },
-      {
-        "covariate": "truck_pct_at_entry",
-        "test_statistic": 15.7,
-        "p": 7.593220753430298e-05
+        "covariate": "STRUCTURE_LEN_MT_049_missing",
+        "test_statistic": 147.0,
+        "p": 7.883532917743512e-34
       },
       {
         "covariate": "LEFT_LAT_UND_MT_056",
-        "test_statistic": 14.9,
-        "p": 0.00011509191135393432
+        "test_statistic": 31.8,
+        "p": 1.7488189164035148e-08
       },
       {
-        "covariate": "SCOUR_CRITICAL_113",
-        "test_statistic": 12.8,
-        "p": 0.0003446140159904278
+        "covariate": "LAT_UND_MT_055B",
+        "test_statistic": 31.8,
+        "p": 1.7504314717344408e-08
+      },
+      {
+        "covariate": "STRUCTURE_LEN_MT_049",
+        "test_statistic": 22.8,
+        "p": 1.78202485442624e-06
+      },
+      {
+        "covariate": "BASE_HWY_NETWORK_012_missing",
+        "test_statistic": 21.0,
+        "p": 4.607177677607296e-06
+      },
+      {
+        "covariate": "design_load_ordinal_missing",
+        "test_statistic": 14.6,
+        "p": 0.00013536516339840996
+      },
+      {
+        "covariate": "SCOUR_CRITICAL_113_missing",
+        "test_statistic": 11.9,
+        "p": 0.0005728135514883476
+      },
+      {
+        "covariate": "SURFACE_TYPE_6",
+        "test_statistic": 11.5,
+        "p": 0.0006895860519365153
+      },
+      {
+        "covariate": "LEFT_CURB_MT_050A",
+        "test_statistic": 10.7,
+        "p": 0.0010767512423525078
+      },
+      {
+        "covariate": "design_load_ordinal",
+        "test_statistic": 10.7,
+        "p": 0.0010800755474795502
       }
     ],
     "interpretation": "At this n, statistically detectable PH violations are expected for most real time-varying effects; Cox is reported as a discriminative benchmark and its hazard ratios read as time-averaged effects."
   },
   "cox_effect_size_summary": {
-    "n_features": 154,
-    "n_significant_p001": 30,
-    "n_p001_hr_outside_5pct": 25,
-    "n_p001_hr_outside_10pct": 24,
+    "n_features": 146,
+    "n_significant_p001": 23,
+    "n_p001_hr_outside_5pct": 20,
+    "n_p001_hr_outside_10pct": 18,
     "top_material_effects": [
       {
         "feature": "TOLL_020_Other",
-        "hazard_ratio": 0.185,
-        "p": 1.7706400124131107e-05
-      },
-      {
-        "feature": "HIGHWAY_SYSTEM_104_missing",
-        "hazard_ratio": 3.519,
-        "p": 1.9166363808710365e-65
-      },
-      {
-        "feature": "DECK_TYPE_3",
-        "hazard_ratio": 2.869,
-        "p": 8.924159821762086e-13
-      },
-      {
-        "feature": "STRUCTURE_TYPE_043B_7",
-        "hazard_ratio": 0.386,
-        "p": 4.0711254148281545e-07
-      },
-      {
-        "feature": "STATE_44",
-        "hazard_ratio": 2.517,
-        "p": 1.3845706524612378e-32
-      },
-      {
-        "feature": "STRAHNET_HIGHWAY_100_2",
-        "hazard_ratio": 2.49,
-        "p": 2.1067499021943185e-08
-      },
-      {
-        "feature": "MAINTENANCE_31",
-        "hazard_ratio": 2.142,
-        "p": 4.08494284403456e-06
-      },
-      {
-        "feature": "DECK_PROTECTION_1",
-        "hazard_ratio": 0.478,
-        "p": 4.807945038388256e-20
-      },
-      {
-        "feature": "ever_reconstructed",
-        "hazard_ratio": 0.529,
-        "p": 1.4671951181504499e-36
+        "hazard_ratio": 0.139,
+        "p": 1.1384822181983866e-07
       },
       {
         "feature": "BASE_HWY_NETWORK_012_missing",
-        "hazard_ratio": 1.663,
-        "p": 1.2634364752764354e-16
+        "hazard_ratio": 3.587,
+        "p": 5.676699527151171e-69
+      },
+      {
+        "feature": "STRUCTURE_TYPE_043B_7",
+        "hazard_ratio": 0.389,
+        "p": 4.248552205773382e-05
+      },
+      {
+        "feature": "HIGHWAY_SYSTEM_104_missing",
+        "hazard_ratio": 2.248,
+        "p": 3.4651816235322184e-26
+      },
+      {
+        "feature": "DECK_PROTECTION_1",
+        "hazard_ratio": 0.464,
+        "p": 1.7790486776071504e-15
+      },
+      {
+        "feature": "STATE_44",
+        "hazard_ratio": 2.118,
+        "p": 2.7275300798277355e-16
+      },
+      {
+        "feature": "HISTORY_4",
+        "hazard_ratio": 1.702,
+        "p": 1.6597759631352091e-09
+      },
+      {
+        "feature": "ever_reconstructed",
+        "hazard_ratio": 0.604,
+        "p": 6.297204185218659e-17
+      },
+      {
+        "feature": "DECK_TYPE_Other",
+        "hazard_ratio": 1.654,
+        "p": 9.707190958244102e-08
+      },
+      {
+        "feature": "TEMP_STRUCTURE_103",
+        "hazard_ratio": 1.591,
+        "p": 2.7556236126278274e-08
       }
     ]
   }

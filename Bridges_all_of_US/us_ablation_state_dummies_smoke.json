@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-07-29T15:14:49Z",
+  "generated_utc": "2026-07-30T23:05:39Z",
   "design": {
     "ablation_train_rows": 5000,
-    "shared_test_rows": 4123,
+    "shared_test_rows": 2146,
     "ablation_params": {
       "n_estimators": 25,
       "max_samples": 0.2,
@@ -25,21 +25,21 @@
     "n_state_dummies": 2
   },
   "arm_A_with_state": {
-    "pooled_c_index": 0.7984,
-    "median_state_c_index": 0.7645,
-    "ma_c_index": 0.7974
+    "pooled_c_index": 0.783,
+    "median_state_c_index": 0.7702,
+    "ma_c_index": 0.772
   },
   "arm_B_without_state": {
-    "pooled_c_index": 0.7817,
-    "median_state_c_index": 0.7435,
-    "ma_c_index": 0.7925
+    "pooled_c_index": 0.7747,
+    "median_state_c_index": 0.7598,
+    "ma_c_index": 0.7716
   },
   "delta_summary": {
-    "median_state_delta_B_minus_A": -0.021,
+    "median_state_delta_B_minus_A": -0.0104,
     "states_better_under_B": 0,
     "n_states_compared": 2
   },
-  "arm_C_ma_specialist_c_index": 0.8239,
+  "arm_C_ma_specialist_c_index": 0.8033,
   "arm_D_cost_matched_capacity": {
     "question": "How much of the full RSF's C-index gap to Cox/AFT is the memory-driven coarsening (leaf=50, 10% per-tree subsampling) vs real capacity limits? MA-grade hyperparameters at Arm-C-matched cost on national subsamples.",
     "params": {
@@ -51,64 +51,64 @@
       "n_jobs": -1,
       "random_state": 42
     },
-    "n_train_per_seed": 15104,
+    "n_train_per_seed": 7499,
     "n_seeds": 2,
-    "pooled_c_mean": 0.8307,
-    "pooled_c_sd": 0.0016,
-    "median_state_c_mean": 0.8236,
-    "median_state_c_sd": 0.0011,
+    "pooled_c_mean": 0.817,
+    "pooled_c_sd": 0.0045,
+    "median_state_c_mean": 0.82,
+    "median_state_c_sd": 0.006,
     "per_seed": [
       {
         "seed": 0,
-        "n_train": 15104,
-        "pooled_c_index": 0.8296,
-        "median_state_c_index": 0.8228
+        "n_train": 7499,
+        "pooled_c_index": 0.8202,
+        "median_state_c_index": 0.8243
       },
       {
         "seed": 1,
-        "n_train": 15104,
-        "pooled_c_index": 0.8318,
-        "median_state_c_index": 0.8243
+        "n_train": 7499,
+        "pooled_c_index": 0.8138,
+        "median_state_c_index": 0.8158
       }
     ],
     "capacity_curve": [
       {
         "n_train_target": 10000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.8256,
+        "pooled_c_mean": 0.8155,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.8187,
+        "median_state_c_mean": 0.8214,
         "per_seed": [
           {
             "seed": 42,
-            "n_train": 10000,
-            "pooled_c_index": 0.8256,
-            "median_state_c_index": 0.8187
+            "n_train": 8583,
+            "pooled_c_index": 0.8155,
+            "median_state_c_index": 0.8214
           }
         ]
       },
       {
         "n_train_target": 20000,
         "n_seeds": 1,
-        "pooled_c_mean": 0.8338,
+        "pooled_c_mean": 0.8155,
         "pooled_c_sd": null,
-        "median_state_c_mean": 0.8312,
+        "median_state_c_mean": 0.8214,
         "per_seed": [
           {
             "seed": 42,
-            "n_train": 16492,
-            "pooled_c_index": 0.8338,
-            "median_state_c_index": 0.8312
+            "n_train": 8583,
+            "pooled_c_index": 0.8155,
+            "median_state_c_index": 0.8214
           }
         ]
       }
     ],
-    "full_rsf_reference": 0.8171,
-    "cox_reference": 0.8859,
-    "aft_reference": 0.8847,
-    "gap_to_cox_full_rsf": 0.0688,
-    "gap_to_cox_arm_D": 0.0552,
-    "gap_to_cox_top_capacity": 0.0521
+    "full_rsf_reference": 0.7964,
+    "cox_reference": 0.8616,
+    "aft_reference": 0.8624,
+    "gap_to_cox_full_rsf": 0.0652,
+    "gap_to_cox_arm_D": 0.0446,
+    "gap_to_cox_top_capacity": 0.0461
   },
   "arm_E_climate_contribution": {
     "question": "What does the environmental block (17 Daymet 1992-2025 cell normals + coastal distance) add over a feature-matched structural baseline at national scale? The PA case study answers this for one state's decks; this answers it on the full cohort for all three models.",
@@ -135,8 +135,8 @@
         "wet_days"
       ],
       "location_imputed_note": "retained in BOTH arms \u2014 a geocoding-quality flag, not an environmental measurement",
-      "scale": "full shipped fidelity \u2014 16,492 train rows at Notebook 5/6 hyperparameters, not the 5,000-row matched-cost budget used by arms A-D",
-      "n_train": 16492,
+      "scale": "full shipped fidelity \u2014 8,583 train rows at Notebook 5/6 hyperparameters, not the 5,000-row matched-cost budget used by arms A-D",
+      "n_train": 8583,
       "rsf_params": {
         "n_estimators": 25,
         "max_samples": 0.5,
@@ -150,38 +150,38 @@
       "penalizer": 0.01,
       "bootstrap_B": 50,
       "bootstrap_seed": 2026,
-      "n_test": 4123,
-      "n_test_events": 919
+      "n_test": 2146,
+      "n_test_events": 645
     },
     "rsf": {
-      "c_baseline": 0.8077,
-      "c_climate": 0.8171,
-      "delta": 0.0094,
+      "c_baseline": 0.8124,
+      "c_climate": 0.7964,
+      "delta": -0.016,
       "delta_ci95": [
-        0.0027,
-        0.0175
+        -0.0216,
+        -0.009
       ],
       "p_two_sided": "< 0.04"
     },
     "cox": {
-      "c_baseline": 0.8857,
-      "c_climate": 0.8859,
-      "delta": 0.0002,
+      "c_baseline": 0.8619,
+      "c_climate": 0.8616,
+      "delta": -0.0002,
       "delta_ci95": [
-        -0.0005,
-        0.0011
+        -0.0013,
+        0.0016
       ],
-      "p_two_sided": 0.48
+      "p_two_sided": 0.72
     },
     "aft": {
-      "c_baseline": 0.884,
-      "c_climate": 0.8847,
-      "delta": 0.0006,
+      "c_baseline": 0.8592,
+      "c_climate": 0.8624,
+      "delta": 0.0033,
       "delta_ci95": [
-        -0.0002,
-        0.0018
+        0.0024,
+        0.0048
       ],
-      "p_two_sided": 0.12
+      "p_two_sided": "< 0.04"
     }
   }
 }

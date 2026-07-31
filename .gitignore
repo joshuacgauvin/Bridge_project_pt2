@@ -85,6 +85,8 @@ $RECYCLE.BIN/
 # ---- Paper drafts ----
 Comparing survival models and measuring the impact of environmental data for predicting bridge deterioration.md
 draft.ipynb
+figures.ipynb
+figures
 
 # ---- Scratch / temp ----
 *.tmp

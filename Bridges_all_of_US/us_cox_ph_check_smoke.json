@@ -1,59 +1,59 @@
 {
-  "scope": "full training set (n=16,492)",
+  "scope": "full training set (n=8,583)",
   "time_transform": "rank",
-  "n_covariates": 154,
-  "n_violating_p05": 31,
-  "n_violating_p001": 11,
+  "n_covariates": 146,
+  "n_violating_p05": 29,
+  "n_violating_p001": 8,
   "top10_offenders": [
     {
-      "covariate": "LAT_UND_MT_055B",
-      "test_statistic": 36.6,
-      "p": 1.471249407577613e-09
-    },
-    {
-      "covariate": "design_load_ordinal",
-      "test_statistic": 33.0,
-      "p": 9.289872464332374e-09
-    },
-    {
-      "covariate": "design_load_ordinal_missing",
-      "test_statistic": 21.5,
-      "p": 3.5251953075076956e-06
-    },
-    {
-      "covariate": "DETOUR_KILOS_019_missing",
-      "test_statistic": 17.2,
-      "p": 3.411154396433881e-05
-    },
-    {
-      "covariate": "BASE_HWY_NETWORK_012_missing",
-      "test_statistic": 16.8,
-      "p": 4.260402234495306e-05
-    },
-    {
-      "covariate": "SURFACE_TYPE_6",
-      "test_statistic": 16.4,
-      "p": 5.08146038373498e-05
-    },
-    {
-      "covariate": "MEMBRANE_TYPE_9",
-      "test_statistic": 16.2,
-      "p": 5.692022814098988e-05
-    },
-    {
-      "covariate": "truck_pct_at_entry",
-      "test_statistic": 15.7,
-      "p": 7.593220753430298e-05
+      "covariate": "STRUCTURE_LEN_MT_049_missing",
+      "test_statistic": 147.0,
+      "p": 7.883532917743512e-34
     },
     {
       "covariate": "LEFT_LAT_UND_MT_056",
-      "test_statistic": 14.9,
-      "p": 0.00011509191135393432
+      "test_statistic": 31.8,
+      "p": 1.7488189164035148e-08
     },
     {
-      "covariate": "SCOUR_CRITICAL_113",
-      "test_statistic": 12.8,
-      "p": 0.0003446140159904278
+      "covariate": "LAT_UND_MT_055B",
+      "test_statistic": 31.8,
+      "p": 1.7504314717344408e-08
+    },
+    {
+      "covariate": "STRUCTURE_LEN_MT_049",
+      "test_statistic": 22.8,
+      "p": 1.78202485442624e-06
+    },
+    {
+      "covariate": "BASE_HWY_NETWORK_012_missing",
+      "test_statistic": 21.0,
+      "p": 4.607177677607296e-06
+    },
+    {
+      "covariate": "design_load_ordinal_missing",
+      "test_statistic": 14.6,
+      "p": 0.00013536516339840996
+    },
+    {
+      "covariate": "SCOUR_CRITICAL_113_missing",
+      "test_statistic": 11.9,
+      "p": 0.0005728135514883476
+    },
+    {
+      "covariate": "SURFACE_TYPE_6",
+      "test_statistic": 11.5,
+      "p": 0.0006895860519365153
+    },
+    {
+      "covariate": "LEFT_CURB_MT_050A",
+      "test_statistic": 10.7,
+      "p": 0.0010767512423525078
+    },
+    {
+      "covariate": "design_load_ordinal",
+      "test_statistic": 10.7,
+      "p": 0.0010800755474795502
     }
   ],
   "interpretation": "At this n, statistically detectable PH violations are expected for most real time-varying effects; Cox is reported as a discriminative benchmark and its hazard ratios read as time-averaged effects."
