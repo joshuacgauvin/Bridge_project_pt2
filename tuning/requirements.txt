@@ -1,0 +1,11 @@
+# Everything tune_rsf.py needs, pinned to the versions the national pipeline was
+# verified on. Use Python 3.12 on an x86-64 machine: that is the combination with
+# prebuilt wheels for every package (numpy 2.5 dropped 3.11, ecos has no 3.13 wheel,
+# scikit-survival has no ARM Linux wheel). Install with:
+#   pip install -r requirements.txt
+numpy==2.5.1
+pandas==3.0.3
+scipy==1.18.0
+scikit-learn==1.9.0
+scikit-survival==0.28.0
+joblib==1.5.3

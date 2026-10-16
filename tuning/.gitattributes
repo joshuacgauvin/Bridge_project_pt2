@@ -1,0 +1,2 @@
+# Keep the launcher runnable on Linux even after a Windows checkout (core.autocrlf=true).
+*.sh text eol=lf
