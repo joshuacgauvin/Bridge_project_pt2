@@ -1,11 +1,12 @@
 """Random-search hyperparameter tuning for the national Random Survival Forest.
 
-Built to run on a cloud machine: the defaults are the full-size search a laptop could
-not finish (see "Search size"), and everything the run needs is in this folder.
-
     bash run_tuning.sh               # Linux/cloud: venv + pinned installs + detached run
     python tune_rsf.py               # the same search, in the foreground
     python tune_rsf.py --smoke       # <1 min end-to-end check -> *_smoke outputs
+
+    python tune_rsf.py --n-sections 10               # show how 10 jobs would split it
+    python tune_rsf.py --n-sections 10 --section 3   # run one of those jobs
+    python tune_rsf.py --merge                       # once every section has finished
 
 Input:  rsf_tuning_train.csv (this folder) — Notebook 5's training split only, built by
         prepare_tuning_data.py. The test split is never read, so tuning cannot touch the
@@ -50,6 +51,14 @@ Method (replaces the RUN_TUNING cell at the end of train_national_rsf.ipynb):
   - Each finished configuration is appended to rsf_tuning_progress.jsonl; rerunning
     the same command skips completed ones (a larger --n-iter extends the search). The
     file is folded into the JSON and deleted when the search finishes.
+  - Sections: --n-sections K --section n runs only the n-th of K shares of the
+    configurations, so K jobs (separate machines, or a SLURM array) can split the search.
+    Configurations are dealt out heaviest first, each to the least-loaded section, by the
+    same cost model as the ETA, so the sections finish at about the same time. Each
+    section appends only to its own rsf_tuning_sections/section_n_of_K.jsonl, so all of
+    them can share one folder; --merge then writes the JSON. Every section and the merge
+    need the same --n-iter, --cv, --n-estimators, --n-tune, --seed and --smoke. A
+    configuration scores the same whichever job fits it (fixed seeds).
 
 Flags:
     --n-iter 50          random configurations to try (plus the production baseline)
@@ -61,7 +70,13 @@ Flags:
     --fold-jobs K        folds fitted at once (default: all; lower it if RAM is short)
     --seed 42            seed for the subsample, folds, parameter draws and forests
     --smoke              5,000 rows, 3 configurations, 10 trees; writes *_smoke files
-    --fresh              discard any saved progress and start over
+    --fresh              discard this run's saved progress (the main progress file, or
+                         with --section that section's file) and start over
+    --n-sections K       split the search into K sections; without --section, print the
+                         split and exit
+    --section n          run only section n of K (1..K), e.g. $SLURM_ARRAY_TASK_ID
+    --merge              combine every section's results into the JSON, or list what is
+                         still missing
 
 Requires the pinned packages in requirements.txt (Python 3.12 on x86-64).
 """
@@ -174,14 +189,22 @@ def split_features(max_features, p):
     return max(1, int(max_features * p))
 
 
-def read_progress(path, settings):
-    """Completed trials from a previous run of the same settings, keyed by params."""
+def read_progress(path, settings, own=True):
+    """Completed trials from a previous run of the same settings, keyed by params. A
+    settings mismatch is fatal only in the file this run appends to (`own`); anyone
+    else's file is skipped."""
     done = {}
     if not path.exists():
         return done
     lines = path.read_text(encoding="utf-8").splitlines()
-    header = json.loads(lines[0]) if lines else {}
+    try:
+        header = json.loads(lines[0]) if lines else {}
+    except json.JSONDecodeError:              # another section creating its file right now
+        header = {}
     if header.get("settings") != settings:
+        if not own:
+            print(f"  ignoring {path.name}: written with different settings")
+            return done
         sys.exit(f"{path.name} was written with different settings:\n  saved: "
                  f"{header.get('settings')}\n  now:   {settings}\n"
                  "Rerun with the original flags to resume, or add --fresh to start over.")
@@ -193,6 +216,26 @@ def read_progress(path, settings):
             continue
         done[key(rec["params"])] = rec
     return done
+
+
+def read_all_progress(progress, sections_dir, settings, own):
+    """Every scored configuration: the main progress file plus every section's file, so
+    no job redoes work another job (or an earlier split into sections) already saved."""
+    done = {}
+    for path in [progress, *sorted(sections_dir.glob("*.jsonl"))]:
+        done.update(read_progress(path, settings, own=path == own))
+    return done
+
+
+def split_sections(weights, n_sections):
+    """Indices of each section's configurations: heaviest first, each to the least-loaded
+    section. The weights are integers, so every machine computes the same split."""
+    sections, loads = [[] for _ in range(n_sections)], [0] * n_sections
+    for i in sorted(range(len(weights)), key=lambda i: (-weights[i], i)):
+        s = loads.index(min(loads))
+        sections[s].append(i)
+        loads[s] += weights[i]
+    return [sorted(s) for s in sections], loads
 
 
 def run_trial(label, params, X, y, folds, args, forest_jobs):
@@ -238,7 +281,16 @@ def main():
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--fresh", action="store_true")
+    ap.add_argument("--n-sections", type=int, default=None)
+    ap.add_argument("--section", type=int, default=None)
+    ap.add_argument("--merge", action="store_true")
     args = ap.parse_args()
+    if args.n_sections is not None and args.n_sections < 1:
+        ap.error("--n-sections must be at least 1")
+    if args.section is not None and not (args.n_sections and 1 <= args.section <= args.n_sections):
+        ap.error("--section n needs --n-sections K, with 1 <= n <= K")
+    if args.merge and args.section is not None:
+        ap.error("--merge combines every section; leave out --section")
     if args.smoke:
         args.n_tune, args.n_iter, args.n_estimators = 5_000, 3, 10
 
@@ -249,6 +301,7 @@ def main():
     suffix = "_smoke" if args.smoke else ""
     out_json = HERE / f"rsf_best_hyperparameters{suffix}.json"
     progress = HERE / f"rsf_tuning_progress{suffix}.jsonl"
+    sections_dir = HERE / f"rsf_tuning_sections{suffix}"
 
     t_load = time.time()
     X, y, n_full = load(args.n_tune, args.seed)
@@ -284,31 +337,70 @@ def main():
                 "n_estimators": args.n_estimators, "seed": args.seed, "smoke": args.smoke,
                 "space": space}
 
-    if args.fresh:
-        progress.unlink(missing_ok=True)
-    done = read_progress(progress, settings)
-    if done:
-        print(f"resuming: {len(done)} configuration(s) already scored in {progress.name}")
-    elif not progress.exists():
-        progress.write_text(json.dumps({"settings": settings}) + "\n", encoding="utf-8")
-
     draws = draw_configs(space, args.n_iter, args.seed)
     todo = [("baseline", baseline)] + [(f"{i + 1}/{len(draws)}", p) for i, p in enumerate(draws)]
 
     def cost(p):
-        """Relative fit cost for the ETA — a power law fitted to timed fits at three corners
-        of the space; depth caps cut it in proportion to the unconstrained depth."""
+        """Relative fit cost for the ETA and the sections — a power law fitted to timed fits
+        at three corners of the space; depth caps cut it in proportion to the unconstrained
+        depth."""
         rows = unique_rows(p["max_samples"] or fold_train, fold_train)
         c = (rows ** 1.2 * split_features(p["max_features"], n_features) ** 0.62
              * p["min_samples_leaf"] ** -0.45)
         natural_depth = 3.1 * np.log2(max(rows / p["min_samples_leaf"], 2))
         return c * min(1.0, p["max_depth"] / natural_depth) if p["max_depth"] else c
 
+    if args.n_sections:
+        # Integer weights (per mille of the baseline's cost) so float noise between
+        # machines cannot move a configuration into a different section.
+        weights = [max(1, round(1000 * cost(p) / cost(baseline))) for _, p in todo]
+        sections, loads = split_sections(weights, args.n_sections)
+        share = lambda s: f"{100 * loads[s] / sum(weights):.1f}%"
+    if args.n_sections and args.section is None and not args.merge:
+        print(f"{len(todo)} configurations in {args.n_sections} sections "
+              "(share of the estimated total compute):")
+        for s, idx in enumerate(sections):
+            print(f"  section {s + 1:>3}: {share(s):>6}   "
+                  + (", ".join(todo[i][0] for i in idx) or "(none)"))
+        print(f"The heaviest configuration alone is {100 * max(weights) / sum(weights):.1f}% of "
+              f"the total, so more than ~{sum(weights) / max(weights):.0f} sections won't finish sooner.")
+        return
+
+    # Each mode appends to its own file (none for --merge) and fits its own configurations.
+    if args.merge:
+        own, mine = None, []
+    elif args.section:
+        own = sections_dir / f"section_{args.section}_of_{args.n_sections}.jsonl"
+        mine = [todo[i] for i in sections[args.section - 1]]
+    else:
+        own, mine = progress, todo
+    if args.fresh and own:
+        own.unlink(missing_ok=True)
+    done = read_all_progress(progress, sections_dir, settings, own)
+    if args.merge:
+        missing = [label for label, p in todo if key(p) not in done]
+        if missing:
+            sys.exit(f"{len(missing)} of {len(todo)} configurations are not scored yet: "
+                     f"{', '.join(missing)}\nRerun the sections that hold them (--n-sections K "
+                     "on its own shows which), then --merge again.")
+    elif not own.exists():
+        own.parent.mkdir(exist_ok=True)
+        header = {"settings": settings}
+        if args.section:
+            header.update(section=args.section, n_sections=args.n_sections)
+        own.write_text(json.dumps(header) + "\n", encoding="utf-8")
+    if args.section:
+        print(f"section {args.section} of {args.n_sections}: {len(mine)} configuration(s), "
+              f"{share(args.section - 1)} of the estimated compute", flush=True)
+    n_done = sum(key(p) in done for _, p in mine)
+    if n_done:
+        print(f"resuming: {n_done} of {len(mine)} configuration(s) already scored", flush=True)
+
     keep_awake(True)
     try:
         session_minutes, session_cost = 0.0, 0.0
-        pending = {key(p): p for _, p in todo if key(p) not in done}
-        for label, params in todo:
+        pending = {key(p): p for _, p in mine if key(p) not in done}
+        for label, params in mine:
             k = key(params)
             if k in done:
                 r = done[k]
@@ -317,7 +409,7 @@ def main():
                 continue
             rec = run_trial(label, params, X, y, folds, args, forest_jobs)
             done[k] = rec
-            with progress.open("a", encoding="utf-8") as f:
+            with own.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(rec) + "\n")
                 f.flush()
                 os.fsync(f.fileno())
@@ -330,6 +422,11 @@ def main():
                   f"ETA {eta:.1f} h", flush=True)
     finally:
         keep_awake(False)
+
+    if args.section:
+        print(f"\nsection {args.section} of {args.n_sections} finished. Once every section has, "
+              "run: python tune_rsf.py --merge (with the same --n-iter, --cv, ... flags)")
+        return
 
     # ── Assemble the export ──────────────────────────────────────────────────
     trials = sorted(done.values(), key=lambda r: r["mean_c_index"], reverse=True)
@@ -405,7 +502,8 @@ def main():
                     "wall_minutes": round(r["wall_minutes"], 1)} for r in trials],
     }
     out_json.write_text(json.dumps(result, indent=2), encoding="utf-8")
-    progress.unlink(missing_ok=True)
+    if not args.merge:                        # --merge leaves every input file in place
+        progress.unlink(missing_ok=True)
 
     print(f"\nsaved {out_json.name}")
     print(f"best: C={best['mean_c_index']:.4f} +/- {best['std_c_index']:.4f}   {describe(best['params'])}"

@@ -97,6 +97,35 @@ fitted from timed fits at three corners of the space:
   discards the saved progress.
 - When the search finishes, the progress file is folded into the JSON and deleted.
 
+## Splitting the search across jobs
+
+`--n-sections K --section n` runs only section n of K (n = 1…K). K jobs can then share
+the search, on separate machines or as a SLURM array.
+
+```
+python tune_rsf.py --n-sections 6                  # show the split; runs nothing
+python tune_rsf.py --n-sections 6 --section 3      # one job, e.g. --section $SLURM_ARRAY_TASK_ID
+python tune_rsf.py --merge                         # once every section has finished
+```
+
+- **Balanced by cost.** Configurations are dealt out by the ETA's cost model, so the
+  sections take about equally long.
+- **Use about 6 sections.** The most expensive configuration (8/50) is about 17% of the
+  estimated total on its own, so more sections won't finish sooner. Give each job plenty of
+  cores instead: up to about 150 are useful (3 folds × 50 trees).
+- **One shared folder.** Each section writes only its own file,
+  `rsf_tuning_sections/section_n_of_K.jsonl`, so the jobs can run at the same time from
+  the same folder.
+- **Rerun to resume.** A section that failed or timed out continues where it stopped
+  when you rerun its command. Configurations already saved in any progress file are
+  skipped, including the laptop's baseline.
+- **`--merge`** writes `rsf_best_hyperparameters.json`, or lists the configurations that
+  are still missing. It leaves the section files in place.
+- **Same flags everywhere.** Every section and the merge need the same `--n-iter`,
+  `--cv`, `--n-estimators`, `--n-tune` and `--seed`.
+- **Same scores.** Splitting doesn't change any result: the merged JSON matches a
+  single-machine run apart from timings (verified on `--smoke`).
+
 ## The output: `rsf_best_hyperparameters.json`
 
 | Field | What it holds |
